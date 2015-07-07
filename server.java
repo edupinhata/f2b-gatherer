@@ -18,8 +18,8 @@
 * but it's possible to be a MySQL.  
 */
 import java.io.*;
-
-
+import java.lang.Exception;
+import java.util.ArrayList;
 
 public class server{
 
@@ -38,11 +38,22 @@ public class server{
 	BufferedWriter bw;
 	private boolean changed = false; //variable that detects changes in log
 	private int lastLine; //last line read
-	
+	private ArrayList<String> lineBuffer = new ArrayList(); //variables that will hold
+								//lines not written in database
 
 
 	public static void main(String [] args){
-		System.out.println("Hello world!");
+		init();
+
+		//main loop
+		while(true){
+			if(changed){
+				//read the lines that were not changed 
+				//and insert in mysql	
+			
+			}	
+			
+		}
 	}
 
 
@@ -51,17 +62,130 @@ public class server{
 	* when the server starts.
 	*/
 	public void init(){
-		//read the variable file
-		fr = new FileReader(VAR_FILE_PATH);
-		br = new BufferedReader(fr);
+	
+		String line;
+
+		try{	
+			//read the variable file
+			fr = new FileReader(VAR_FILE_PATH);
+			br = new BufferedReader(fr);
 		
-		if(br.next()){
-			lastLine = Integer.ParseInt(br.readLine());
+			if(line = br.readLine() != null){
+				lastLine = Integer.ParseInt(line);
+			}
+			else
+				lastLine = 0;	
+		
+			br.close();
+
+		}catch(Exception e){
+			e.printStackTrace();
+			System.out.println("Error: Problem to read the variables file.");		
 		}
-		else
-			lastLine = 0;	
 	}
 
 
-}
+
+	/*
+	* Function: isChanged
+	* Function that verifies if the log was modified.
+	* It reads the file and compares with the lastLine.
+	* At this point, the lastLine should be updated.
+	*
+	* IMPORTANT: This fucntion is made thinking that the log will not be 
+	* deleted. So, if it's possible to the log be erased after some while,
+	* this function must be adapted. 
+	*/
+	public boolean isChanged(){
+		
+		//variables
+		int lineCounting = lastLine;  //variable that hold how many lines are in the file
+
+
+		if(changed) //if it's alread changed, there is nothing to verify.
+			return true;
+		else{
+
+			try{
+				
+				fr = new FileReader(F2B_LOG_PATH);
+				br = new BufferedReader(fr);
+
+				//get until the lastLinebefore counting		
+				for(int i=0; i<lastLine; i++)
+					br.readLine();
+
+				while(br.readLine() != null)
+					lastCounting ++;
+		
+				br.close();
+						
+
+			}catch(Exception e){
+				e.printStackTrace();
+				System.out.println("Problem to read the fail2ban log files.");
+			}
+
+			//if there is no modification on log, the number of lines will be the same.
+			if(lineCounting == lastLine)
+				return false;
+			else{
+				changed = true;
+				return true;
+			}		
+		}	
+	}
+	
+
+
+
+	/*
+	* Function: getNewLines
+	* Function that will read the fail2ban log and get the new
+	* new lines.
+	* In this function, the changed and lastLine must be changed
+	* accordling with the lines read.
+ 	*
+	*/	
+	public void getNewLines(){
+		if(isChanged()){
+			//add the unread lines to the array list	
+			
+			try{
+				fr = new FileReader(F2B_LOG_PATH);
+				br = new BufferedReader(fr);
+				String line;
+
+
+				//get until the line to be readen
+				for(int i=0; i<lastLine; i++)
+					br.readLine();
+
+				while(line = br.readLine() != null)
+					lineBuffer.add(line);
+
+				br.close();	
+
+			}catch(Exception e){
+				e.printStackTrace();
+			}		
+		}
+	}
+
+
+
+	/*
+	* Function: flushLines
+	* Function that will write the new lines to MySQL
+	* If the action of write in the MySQL is done, the lines in the 
+	* lineBuffer must be erased. And the line in the file VAR_FILE_PATH 
+	*  must be changed.
+	*
+	*/	
+	public void flushLines(){
+
+	} 
+
+
+}	
 
