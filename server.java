@@ -27,9 +27,10 @@ public class server{
 	*	VARIABLES
 	===============================*/
 	//PATHS
-	public String final F2B_LOG_PATH = "/var/log/fail2ban.log";
-	public String final VAR_FILE_PATH = "./var_file.info";
-	
+	private final String F2B_LOG_PATH = "/var/log/fail2ban.log";
+	private final String VAR_FILE_PATH = "./var_file.info";
+	private final String DB_FILE = "./db_file.db"; //file that will store the db 
+						//in the place of MySQl for test purpose	
 
 	//PROGRAM VARIABLES
 	FileReader fr;
@@ -38,10 +39,10 @@ public class server{
 	BufferedWriter bw;
 	private boolean changed = false; //variable that detects changes in log
 	private int lastLine; //last line read
-	private ArrayList<String> lineBuffer = new ArrayList(); //variables that will hold
+	private ArrayList<String> lineBuffer = new ArrayList<String>(); //variables that will hold
 								//lines not written in database
 
-
+	/*
 	public static void main(String [] args){
 		init();
 
@@ -52,9 +53,8 @@ public class server{
 				//and insert in mysql	
 			
 			}	
-			
 		}
-	}
+	}*/
 
 
 	/*
@@ -70,9 +70,8 @@ public class server{
 			fr = new FileReader(VAR_FILE_PATH);
 			br = new BufferedReader(fr);
 		
-			if(line = br.readLine() != null){
-				lastLine = Integer.ParseInt(line);
-			}
+			if((line = br.readLine()) != null)
+				lastLine = Integer.parseInt(line);
 			else
 				lastLine = 0;	
 		
@@ -83,7 +82,6 @@ public class server{
 			System.out.println("Error: Problem to read the variables file.");		
 		}
 	}
-
 
 
 	/*
@@ -116,7 +114,7 @@ public class server{
 					br.readLine();
 
 				while(br.readLine() != null)
-					lastCounting ++;
+					lineCounting++;
 		
 				br.close();
 						
@@ -137,8 +135,6 @@ public class server{
 	}
 	
 
-
-
 	/*
 	* Function: getNewLines
 	* Function that will read the fail2ban log and get the new
@@ -155,15 +151,19 @@ public class server{
 				fr = new FileReader(F2B_LOG_PATH);
 				br = new BufferedReader(fr);
 				String line;
-
+				int countLine = lastLine; //used to define new lastLine
 
 				//get until the line to be readen
 				for(int i=0; i<lastLine; i++)
 					br.readLine();
 
-				while(line = br.readLine() != null)
+				while((line = br.readLine()) != null){
 					lineBuffer.add(line);
-
+					countLine++;
+				}
+					
+				lastLine = countLine; 	
+				
 				br.close();	
 
 			}catch(Exception e){
@@ -175,16 +175,83 @@ public class server{
 
 
 	/*
+	* Function: countLines
+	* Description: Function that return the number of lines in a 
+	* log file.
+	*
+	*/
+	public int countLines(String logfile){
+		try{
+			fr = new FileReader(logfile);
+			br = new BufferedReader(fr);
+
+			int counter = 0;
+			
+			while(br.readLine() != null)
+				counter++;
+
+			br.close();
+			return counter;
+			
+		}catch(Exception e){
+			e.printStackTrace();
+			System.out.println("Error: problem to open " + logfile);
+			return -1;
+		}		
+	}
+
+
+	/*
 	* Function: flushLines
 	* Function that will write the new lines to MySQL
 	* If the action of write in the MySQL is done, the lines in the 
 	* lineBuffer must be erased. And the line in the file VAR_FILE_PATH 
 	*  must be changed.
 	*
+	* First test will be made in a file
 	*/	
 	public void flushLines(){
+		
+		try{
+		
+			fw = new FileWriter(DB_FILE, true);
+			bw = new BufferedWriter(fw);
 
+			for(int i=0; i<lineBuffer.size();i++){
+				bw.write(lineBuffer.get(i));
+				bw.newLine();
+			}	
+
+			//if the code got in this part, it means that it wrote 
+			//on the file.
+			lineBuffer.clear();
+
+			bw.close();
+
+		}catch(Exception e){
+			e.printStackTrace();
+			System.out.println("Error: problem to read the database file.");
+		}
+
+		//write the last line on the file
+
+		if(changed){
+			try{
+				fw = new FileWriter(VAR_FILE_PATH);
+				bw = new BufferedWriter(fw);
+
+				bw.write(countLines(F2B_LOG_PATH)); //write number of lines
+
+				bw.close();				
+				
+
+			}catch(Exception e){
+				e.printStackTrace();
+				System.out.println("Error to read/write in " + VAR_FILE_PATH);	
+			}
+		}
 	} 
+
 
 
 }	
