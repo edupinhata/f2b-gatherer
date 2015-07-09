@@ -64,7 +64,6 @@ public class Server{
 	* when the server starts.
 	*/
 	public void init(){
-	
 		String line;
 
 		try{	
@@ -72,11 +71,15 @@ public class Server{
 			fr = new FileReader(VAR_FILE_PATH);
 			br = new BufferedReader(fr);
 		
-			if((line = br.readLine()) != null)
+			if((line = br.readLine()) != null){
 				lastLine = Integer.parseInt(line);
-			else
+				
+				System.out.println("Entered on init");	
+			}
+			else{
 				lastLine = 0;	
-		
+				System.out.println("Entered on init 2");
+			}
 			br.close();
 
 		}catch(Exception e){
@@ -242,7 +245,10 @@ public class Server{
 				fw = new FileWriter(VAR_FILE_PATH);
 				bw = new BufferedWriter(fw);
 
-				bw.write(countLines(F2B_LOG_PATH)); //write number of lines
+
+				int lines = countLines(F2B_LOG_PATH);
+				System.out.println("Writing: " + lines);
+				bw.write(Integer.toString(lines)); //write number of lines
 
 				bw.close();				
 				
