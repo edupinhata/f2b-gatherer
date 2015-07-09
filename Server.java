@@ -7,7 +7,7 @@
 
 
 /*
-* This server will have some tasks. 
+* This class will have some tasks. 
 * First, it must to store the last time that the log was update to verify if 
 * it was modified.
 * It must also to get the last modification and store it to know 
@@ -17,11 +17,13 @@
 * it is only a file, it'll be necessary to write a program to listen,
 * but it's possible to be a MySQL.  
 */
+package gatherer;
+
 import java.io.*;
 import java.lang.Exception;
 import java.util.ArrayList;
 
-public class server{
+public class Server{
 
 	/*==============================
 	*	VARIABLES
