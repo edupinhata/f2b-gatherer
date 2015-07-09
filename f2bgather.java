@@ -13,7 +13,7 @@
 *
 */
 
-import gatherer.Server;
+import Server;
 
 
 

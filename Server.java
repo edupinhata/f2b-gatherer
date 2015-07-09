@@ -17,7 +17,7 @@
 * it is only a file, it'll be necessary to write a program to listen,
 * but it's possible to be a MySQL.  
 */
-package gatherer;
+//package gatherer;
 
 import java.io.*;
 import java.lang.Exception;
