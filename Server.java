@@ -249,7 +249,8 @@ public class Server{
 				int lines = countLines(F2B_LOG_PATH);
 				System.out.println("Writing: " + lines);
 				bw.write(Integer.toString(lines)); //write number of lines
-
+				bw.newLine();
+				
 				bw.close();				
 				
 
@@ -274,8 +275,16 @@ public class Server{
 	public String[] splitLine(String line){
 		
 		String [] lineInfo;
-		lineInfo = line.split(" "); //split by space
-				
+		lineInfo = line.trim().split("\\s+"); //split by space
+			
+
+		//show lineInfo size
+		System.out.println("Size of line: " + lineInfo.length);
+
+		for(int i=0; i<lineInfo.length; i++){
+			System.out.println("Test: " + lineInfo[i]);
+		}
+	
 		//put everything after 4th index together
 		String lastInfo = "";
 
@@ -287,15 +296,14 @@ public class Server{
 		lastInfo = lastInfo.trim();		
 
 		//reconstruct array with teh lastInfo done
-		String [] finalInfo;
+		String [] finalInfo = new String[6];
 		
 		for(int i=0; i<5; i++)
-			finalInfo[i] = lastInfo[i];
+			finalInfo[i] = lineInfo[i];
 
 		finalInfo[5] = lastInfo; 
 
 		return finalInfo;
-
 	}	
 	
 	/*
