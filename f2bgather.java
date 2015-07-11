@@ -13,7 +13,7 @@
 *
 */
 
-import Server;
+//import Server;
 
 
 
@@ -25,7 +25,9 @@ public class f2bgather{
 		Server sv = new Server();
 
 		//initialize the server
+		System.out.println("Initializing the server...");
 		sv.init();
+		System.out.println("Server initialized!");
 
 		while(true){
 			if(sv.isChanged()){
