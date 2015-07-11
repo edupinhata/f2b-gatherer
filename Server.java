@@ -216,7 +216,7 @@ public class Server{
 		
 		try{
 		
-			fw = new FileWriter(DB_FILE, true);
+			fw = new FileWriter(DB_FILE, true); //true to append on the file
 			bw = new BufferedWriter(fw);
 
 			for(int i=0; i<lineBuffer.size();i++){
