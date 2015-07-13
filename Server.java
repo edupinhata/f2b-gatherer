@@ -223,7 +223,7 @@ public class Server{
 			bw = new BufferedWriter(fw);
 
 			for(int i=0; i<lineBuffer.size();i++){
-				bw.write(lineBuffer.get(i));
+				bw.write(semicolonSeparation(splitLine(lineBuffer.get(i))));
 				bw.newLine();
 			}	
 
@@ -259,6 +259,62 @@ public class Server{
 			}
 		}
 	} 
+
+	/*
+	* splitLine: Function that split the line and return an array 
+	* with the right splits.
+	*
+	* The line parts are:
+ 	* Date Time Action/Filter PID Status Filter_Name Action IP
+	*
+	* One important thing to say is that Filter_Name, Action and IP 
+	* can be a frase instead. So, after the 5 info, everything else 
+	* will be gathered with spaces.
+	*/
+	public String[] splitLine(String line){
+		
+		String [] lineInfo;
+		lineInfo = line.split(" "); //split by space
+				
+		//put everything after 4th index together
+		String lastInfo = "";
+
+		for(int i=5; i<lineInfo.length; i++){
+			lastInfo += lineInfo[i] + " ";	
+		}
+		
+		//make a trim to remove the last space
+		lastInfo = lastInfo.trim();		
+
+		//reconstruct array with teh lastInfo done
+		String [] finalInfo;
+		
+		for(int i=0; i<5; i++)
+			finalInfo[i] = lastInfo[i];
+
+		finalInfo[5] = lastInfo; 
+
+		return finalInfo;
+
+	}	
+	
+	/*
+	* semicolonSeparation: function that get an string array and
+	* separate the information using semicolon.
+	*
+	*
+	*/
+	public String semicolonSeparation(String [] info){
+			
+		String line = "";
+
+		for(int i=0; i<info.length-1; i++)
+			line += info[i] + ";";
+
+		line += info[info.length-1];
+
+		return line;
+	}
 
 
 
