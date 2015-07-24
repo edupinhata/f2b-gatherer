@@ -1,0 +1,14 @@
+F2B_GATHERER
+
+Version 0.01
+Author: Eduardo Pinhata
+
+This is the first sketch before the program had being designed. 
+
+This version simple read the fail2ban.log and perceive updates by the change of the number of lines that the log has.
+The new lines are saved into a file in the same computer that the server is running.
+
+There is no server control, neither the server can deal by itself with log erasing.
+
+
+
