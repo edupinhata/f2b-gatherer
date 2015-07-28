@@ -23,15 +23,14 @@ public class Line{
 	private String pid;	//Process id that is running the fail2ban
 	private String status; //e.g. INFO || NOTICE
 
-	private String action	//e.g. information of what happened - NOTICE has the ban and unban info
+	private String action;	//e.g. information of what happened - NOTICE has the ban and unban info
 
 	private int mac;  //indentify uniquely the computer that wrote the log.
 
 
 
 	//Constructor
-	public Line(int mac, String date, String time, String resource, String pid,
-		   String status, String action){
+	public Line(int mac, String date, String time, String resource, String pid,  String status, String action){
 		
 		this.mac = mac;
 		String [] splitDate = date.split("-");
@@ -57,7 +56,7 @@ public class Line{
 
 	//Constructor splitting the String log. (Easier to use in server)
 	public Line(int mac, String line){
-		String [] lineSplit = line.trim.split("\\s+");
+		String [] lineSplit = line.trim().split("\\s+");
 		String [] splitDate = lineSplit[0].split("-");
 		String [] splitTime = lineSplit[1].split(":|,");
 		
@@ -131,7 +130,7 @@ public class Line{
 		DateTimeFormatter dTF = DateTimeFormatter.ofPattern("HH:mm:ss.SSS");
 		return dateTime.format(dTF);
 	}
-	public setTime(String newTime){
+	public void setTime(String newTime){
 		int [] time = stringToIntSplit(newTime, ":|,");
 	
 		this.dateTime = LocalDateTime.of(dateTime.getYear(), dateTime.getMonth(),
@@ -143,7 +142,7 @@ public class Line{
 	public String getResource(){
 		return resource;
 	}
-	public setResource(String newResource){
+	public void setResource(String newResource){
 		resource = newResource;
 	}
 
@@ -151,7 +150,7 @@ public class Line{
 	public String getPid(){
 		return pid;
 	}
-	public setPid(String newPid){
+	public void setPid(String newPid){
 		pid = newPid;
 	}
 
@@ -159,7 +158,7 @@ public class Line{
 	public String getStatus(){
 		return status;
 	}
-	public setStatus(String newStatus){
+	public void setStatus(String newStatus){
 		status = newStatus;
 	}
 
@@ -167,8 +166,8 @@ public class Line{
 	public String getAction(){
 		return action;
 	}
-	public setAction(String newAction){
-		date = newAction;
+	public void setAction(String newAction){
+		action = newAction;
 	}
 
 
@@ -193,7 +192,7 @@ public class Line{
 		
 		try{
 			for(int i=0; i<textStringArray.length; i++)
-				textIntArray = Integer.parseInt(textStringArray[i]);
+				textIntArray[i] = Integer.parseInt(textStringArray[i]);
 		}catch(Exception e){
 			e.printStackTrace();
 			System.out.println("Error: the log line doesn't has the usual date and time start. Verify the log line: " + text);

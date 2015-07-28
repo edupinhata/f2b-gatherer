@@ -16,6 +16,7 @@ import java.io.FileWriter;
 import java.io.BufferedWriter;
 import controller.Line;
 import java.lang.Exception;
+import java.util.ArrayList;
 
 public class FileLog{
 
@@ -23,8 +24,8 @@ public class FileLog{
 	 * VARIABLES 
 	======================= */
 	//PATHS
-	private final String F2B_LOG = "/var/log/fail2ban.log";
-        private	final String VAR_FILE = "../var_file.txt";
+	private String F2B_LOG = "/var/log/fail2ban.log";
+        private String VAR_FILE = "../var_file.txt";
 
 	//
 	FileReader fr;
@@ -33,8 +34,10 @@ public class FileLog{
 	BufferedWriter bw;
 	private Line lastLine; //lastLine that is read when file is read.
 	private Line firstLine; //first line that is read when file is read. 
-	private int countNumber; //save in memory the number of lines that
+	private int countLines; //save in memory the number of lines that
        			// in the lgo file.
+	private int numLines; //hold the number of lines that was written
+			//in the var file
 	private int mac; //identifier to create lines
 	
 	//constructor
@@ -42,10 +45,16 @@ public class FileLog{
 		this.mac = mac;
 		update();
 	}
+	
+	//constructor that change the path
+	public FileLog(int mac, String F2B_LOG, String VAR_FILE){
+		this.mac = mac;
+		this.F2B_LOG = F2B_LOG;
+		this.VAR_FILE = VAR_FILE;
+	}
+
 
 	//Methods
-	
-	
 
 	/*
 	 * update:
@@ -71,48 +80,35 @@ public class FileLog{
 			//after go through all the lines
 			if(counter !=0)
 				this.lastLine = new Line(mac, line); // get the last line
-			countNumber = counter;				    	
+			countLines = counter;				    	
+			numLines = getNumLines();
+
+			br.close();
 
 		}catch(Exception e){
 			e.printStackTrace();
 			System.out.println("Update failed: could not read file.");
 		}
-		finally{
+		/*finally{
 			br.close();
-		}
+		}*/
 		
 	}
 
 	/*
 	 * getCountNumber: return the countNumber
 	 */
-	public int getCountNumber(){
-		return countNumber;
+	public int getCountLines(){
+		return countLines;
 	}
 
 	/*
-	 * getNumLine: read the number of lines in VAR_FILE
+	 * getNumLines
+	 * return the variable numLines that is read
+	 * from the file.
 	 */
-	public int getNumLine(){
-		try{
-			fr = new FileReader(VAR_FILE);
-			br = new BufferedReader(fr);
-
-			//try to read the line. If there is 
-			//nothing on the file the function 
-			//return 0
-			line = br.readLine() //read the first line
-
-			if(line != null)
-				return Integer.parseInt(line);
-			else
-				return 0;	
-
-		}catch(Exception e){
-			e.printStackTrace();
-		}
-		//if function has any problem
-		return -1; 
+	public int getNumLines(){
+		return numLines;
 	}
 
 	/*
@@ -130,6 +126,63 @@ public class FileLog{
 	public Line getFirstLine(){
 		return firstLine;
 	}
+
+	/*
+	 * getLine
+	 * Function that return a Line object
+	 * given the number of the line of the
+	 * log.
+	 */
+	public Line getLine(int lineNumber){
+		try{
+			fr = new FileReader(F2B_LOG);
+			br = new BufferedReader(fr);
+
+			for(int i=1; i<lineNumber; i++)
+				br.readLine();
+
+			Line line = new Line(this.mac, br.readLine());
+		
+			br.close();
+
+			return line;
+
+		}catch(Exception e){
+			e.printStackTrace();
+		}
+		/*finally{
+			br.close();
+		}*/
+		return null;
+	}	
+
+	/*
+	 * readNumLine: read the number of lines in VAR_FILE
+	 */
+	public int readNumLine(){
+		String line;
+		
+		try{
+			fr = new FileReader(VAR_FILE);
+			br = new BufferedReader(fr);
+
+			//try to read the line. If there is 
+			//nothing on the file the function 
+			//return 0
+			line = br.readLine(); //read the first line
+
+			if(line != null)
+				return Integer.parseInt(line);
+			else
+				return 0;	
+
+		}catch(Exception e){
+			e.printStackTrace();
+		}
+		//if function has any problem
+		return -1; 
+	}
+
 	
 	/*
 	 * writeNumLine
@@ -144,15 +197,79 @@ public class FileLog{
 			bw.write(numLines);	
 			System.out.println("Wirte in " + VAR_FILE + " " + numLines);
 
+			bw.close();
+
 		}catch(Exception e){
 			e.printStackTrace();
 			System.out.println("Error to access file. It was not possible to access the file to write.");
-		}finally{
-			bw.close();
 		}
-
+		/*finally{
+			bw.close();
+		}*/
 	}
-	
 
+	/*
+	 * getAllLog
+	 * Function that return all the log into
+	 * an ArrayList<Line> object
+	 */
+	public ArrayList<Line> getAllLog(){
+
+		ArrayList<Line> buffer = new ArrayList<Line>();
+		String line;
+
+		try{
+			fr = new FileReader(F2B_LOG);
+			br = new BufferedReader(fr);
+
+			while((line = br.readLine()) != null)
+				buffer.add(new Line(this.mac, line));
+
+			br.close();
+
+			return buffer;
+
+		}catch(Exception e){
+			e.printStackTrace();
+		}
+		/*finally{
+			br.close();
+		}*/
+		return null;
+	}
+
+
+	/*
+	 * getLinesAfter
+	 * Function that return the lines that
+	 * must be inserted into the database
+	 */
+	public ArrayList<Line> getLinesAfter(int lineNum){
+		
+		ArrayList<Line> buffer = new ArrayList<Line>();
+		String line;
+
+		try{
+			fr = new FileReader(F2B_LOG);
+			br = new BufferedReader(fr);
+
+			for(int i=0; i<lineNum; i++)
+				br.readLine();
+
+			while((line = br.readLine()) != null)
+				buffer.add(new Line(this.mac, line));
+
+			br.close();
+
+			return buffer;
+			
+		}catch(Exception e){
+			e.printStackTrace();
+		}
+		/*finally{
+			br.close();
+		}*/
+		return null;
+	}
 
 }

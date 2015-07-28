@@ -1,0 +1,24 @@
+README FOR THE F2BGATHERER
+============================
+
+Document that will guide the f2bgatherer development.
+
+
+IDEAS:
+=======================
+
+The syncronization control can use the numebr of lines control and the date control.
+Primarly it uses the line control because it's faster??
+
+a) How to make the control using the dates as guide
+
+
+Problems:
+===========
+
+Logs can be changed and it must to fix itself for possible problems like 
+	- deletion of logs, nam
+	- change,
+	- database deletion
+
+	
