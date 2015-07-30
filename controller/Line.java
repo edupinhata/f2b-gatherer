@@ -8,6 +8,7 @@
 
 package controller;
 
+import controller.Line;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.net.NetworkInterface;

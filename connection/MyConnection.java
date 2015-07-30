@@ -46,6 +46,7 @@ public class MyConnection {
             String textoConexao = "jdbc:mysql://" + ip + ":" +
 		    port + "/F2B_LOGS_DB?user="+ user+ "&password=" + password;
             //String textoConexao = "jdbc:mysql://172.17.44.187/bolao_copa?user=root&password=root";
+		System.out.println("Connection: " + textoConexao);
             sqlConnection = DriverManager.getConnection(textoConexao);
         } catch (Exception e) {
             e.printStackTrace();

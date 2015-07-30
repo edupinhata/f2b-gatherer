@@ -19,8 +19,8 @@ public class Config{
 	private String DB_USER = "root";
 	private String DB_PASS = "root";
 	private String F2B_LOG = "/var/log/fail2ban.log";
-	private String VAR_FILE = "../var_file.info";
-	private String CONFIG_FILE = "../paths.conf";
+	private String VAR_FILE = "./var_file.info";
+	private String CONFIG_FILE = "./paths.conf";
 
 	FileReader fr;
 	BufferedReader br;
@@ -58,8 +58,10 @@ public class Config{
 	 * Function that classify all possible values read in the config file.
 	 */
 	public void defineString(String option, String value){
-		if(option.equals("db_ip"))
+		if(option.equals("db_ip")){
+			System.out.println("Loading following ip: " + value);
 			DB_IP = value;
+		}	
 		else if(option.equals("db_port"))
 			DB_PORT = value;
 		else if(option.equals("db_user"))
