@@ -31,21 +31,23 @@ public class Line{
 
 
 	//Constructor
-	public Line(String mac, String date, String time, String resource, String pid,  String status, String action){
+	public Line(String mac, LocalDateTime dateTime, String resource, String pid,  String status, String action){
 		
 		this.mac = mac;
-		String [] splitDate = date.split("-");
+		/*String [] splitDate = date.split("-");
 		String [] splitTime = time.split(":|,");
 		
 		//converts the date and time into the object
 		this.dateTime = LocalDateTime.of(Integer.parseInt(splitDate[0]),
+		
 			Integer.parseInt(splitDate[1]),
 			Integer.parseInt(splitDate[2]),
 			Integer.parseInt(splitTime[0]),
 			Integer.parseInt(splitTime[1]),
 			Integer.parseInt(splitTime[2]),
-			Integer.parseInt(splitTime[3]));
-
+			Integer.parseInt(splitTime[3])*1000000);
+		*/
+		this.dateTime = dateTime;
 		this.resource = resource;
 		this.pid = pid;
 		this.status = status;
@@ -57,6 +59,7 @@ public class Line{
 
 	//Constructor splitting the String log. (Easier to use in server)
 	public Line(String mac, String line){
+		this.mac = mac;
 		String [] lineSplit = line.trim().split("\\s+");
 		String [] splitDate = lineSplit[0].split("-");
 		String [] splitTime = lineSplit[1].split(":|,");
@@ -99,6 +102,14 @@ public class Line{
 	public void setDateTime(LocalDateTime newDateTime){
 		this.dateTime = newDateTime;
 	}
+
+	//get DateTime String
+	public String getDateTimeString(){
+			
+		DateTimeFormatter dTF = DateTimeFormatter.ofPattern("YYY-MM-dd HH:mm:ss.SSS");
+		return dateTime.format(dTF);
+
+	}
 	
 
 	//date: return the date in a way that can
@@ -131,6 +142,8 @@ public class Line{
 		DateTimeFormatter dTF = DateTimeFormatter.ofPattern("HH:mm:ss.SSS");
 		return dateTime.format(dTF);
 	}
+
+	//set time
 	public void setTime(String newTime){
 		int [] time = stringToIntSplit(newTime, ":|,");
 	
@@ -223,7 +236,7 @@ public class Line{
 
 		//create a calendar object
 		LocalDateTime lDT = LocalDateTime.of(dateArray[0], dateArray[1], dateArray[2],
-			timeArray[0], timeArray[1], timeArray[2], timeArray[3]);
+			timeArray[0], timeArray[1], timeArray[2], timeArray[3]*1000000);
 
 
 		//compare

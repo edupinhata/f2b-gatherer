@@ -69,8 +69,7 @@ public class FileLog{
 			String line; //will save the lines that are being read.
 			String tempLine=""; //temporary line
 
-			while((line = br.readLine()) != null){
-				
+			while((line = br.readLine()) != null && !line.equals("")){
 				//save first line
 				if(counter == 0)
 					this.firstLine = new Line(mac, line);
@@ -82,9 +81,9 @@ public class FileLog{
 			//after go through all the lines
 			if(counter !=0)
 				this.lastLine = new Line(mac, tempLine); // get the last line
-			countLines = counter;				    	
-			numLines = getNumLines();
 
+			this.countLines = counter;				
+			this.numLines = readNumLine();
 			br.close();
 
 		}catch(Exception e){
@@ -224,7 +223,8 @@ public class FileLog{
 			br = new BufferedReader(fr);
 
 			while((line = br.readLine()) != null)
-				buffer.add(new Line(this.mac, line));
+				if(!line.matches("\\s*"))
+					buffer.add(new Line(this.mac, line));
 
 			br.close();
 

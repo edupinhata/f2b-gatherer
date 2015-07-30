@@ -14,6 +14,8 @@ import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.Statement;
 import java.util.ArrayList;
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
 
 public class DbLog{
 
@@ -54,23 +56,26 @@ public class DbLog{
 		Line line = null; //will receice the information and will be returned
 		cn = MyConnection.getInstance(DB_IP, DB_PORT, DB_USER, DB_PASS).sqlConnection;	
 	
-		String query = "select * from LOGS WHERE LOG_MAC=" + mac + 
-		       " AND LOG_DATE = (SELECT MAX(LOG_DATE) FROM LOGS WHERE " + 
-	       		"LOG_MAC=" + mac + " AND LOG_TIME= (SELECT MAX(LOG_TIME) FROM " +
-	 	"LOGS WHERE LOG_MAC=" + mac + "))"; 		
+		String query = "select * from LOGS WHERE LOG_MAC='" + mac + 
+		       "' AND LOG_DATETIME = (SELECT MAX(LOG_DATETIME) FROM LOGS WHERE " + 
+	       		"LOG_MAC='" + mac + "')"; 		
 		
 		Statement stmt = null;
 		System.out.println("Query for get last line: " + query);
 		try{
 			stmt = cn.createStatement();
 			ResultSet rs = stmt.executeQuery(query);
-			if(rs.next())
-				line = new Line(mac, rs.getDate("LOG_DATE").toString(),
-						rs.getTime("LOG_TIME").toString(),
+			if(rs.next()){
+				System.out.println(rs.getTimestamp("LOG_DATETIME"));
+
+				line = new Line(mac, rs.getTimestamp("LOG_DATETIME").toLocalDateTime(),
 						rs.getString("LOG_RESOURCE"),
 						rs.getString("LOG_PID"),
 						rs.getString("LOG_STATUS"),
 						rs.getString("LOG_ACTION"));
+
+
+}
 			cn.close();
 			return line;			
 
@@ -94,9 +99,9 @@ public class DbLog{
 		Statement stmt;
 		String coma = "', '";
 
-		String query = "INSERT INTO LOGS (LOG_MAC, LOG_DATE," + 
-		"LOG_TIME, LOG_RESOURCE, LOG_PID, LOG_STATUS, LOG_ACTION) VALUES ('" + 
-		line.getMac() + coma +  line.getDate() + coma +  line.getTime()+ coma + 
+		String query = "INSERT INTO LOGS (LOG_MAC, LOG_DATETIME," + 
+		" LOG_RESOURCE, LOG_PID, LOG_STATUS, LOG_ACTION) VALUES ('" + 
+		line.getMac() + coma +  line.getDateTimeString() + coma + 
 	       	line.getResource() + coma + line.getPid() + coma  + line.getStatus() + 
 		coma + line.getAction() + "')";
 		System.out.println("Query:" + query);	
@@ -178,8 +183,7 @@ public class DbLog{
 		cn = MyConnection.getInstance(DB_IP, DB_PORT, DB_USER, DB_PASS).sqlConnection;	
 		Statement stmt = null;
 		String query = "SELECT COUNT(*) FROM LOGS WHERE LOG_MAC=" + 
-			mac + " AND LOG_DATE >= " + line.getDate() + 
-			" AND LOG_TIME >= " + line.getTime();
+			mac + " AND LOG_DATETIME >= " + line.getDateTimeString();
 
 		try{
 			stmt = cn.createStatement();

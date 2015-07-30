@@ -66,9 +66,9 @@ public class Log{
 
 		//create the objects that will control the 
 		//comunication with log and database
-		dl = new DbLog(mac, conf.getIp(), conf.getPort(), conf.getUser()
+		dl = new DbLog(this.mac, conf.getIp(), conf.getPort(), conf.getUser()
 				, conf.getPassword());
-		fl = new FileLog(mac, conf.getF2bLog(), conf.getVarFile());
+		fl = new FileLog(this.mac, conf.getF2bLog(), conf.getVarFile());
 	}
 
 	//methods
@@ -86,11 +86,13 @@ public class Log{
 		int countLines = fl.getCountLines();
 		Line lastLine = fl.getLastLine();
 
-		/*System.out.println("Number of lines: " + numLines);
+		System.out.println("Number of lines: " + numLines);
 		System.out.println("Count lines: " + countLines);
-		System.out.println("Db Last line date: " + dl.getLastLine().getDate());
-		System.out.println("File last line date: " + fl.getLine(1));
-	*/	
+		System.out.println("Db Last line date: " + dl.getLastLine().getDateTimeString());
+		System.out.println("File last line date: " + fl.getLine(numLines).getDateTimeString());
+		System.out.println("Compare lines: " + 	dl.getLastLine().compareDate(fl.getLine(numLines)));
+
+	
 		if(numLines == countLines)
 			if(!dl.isEmpty() && 
 			dl.getLastLine().compareDate(fl.getLine(numLines))==0)
