@@ -29,11 +29,11 @@ public class DbLog{
 
 	//
 	Connection cn;
-	private int mac;
+	private String mac;
 
 
 	//Constructor using configuration file
-	public DbLog(int mac, String DB_IP, String DB_PORT,
+	public DbLog(String mac, String DB_IP, String DB_PORT,
 			String DB_USER,String DB_PASS){
 		this.mac = mac;
 		this.DB_IP = DB_IP;
@@ -50,17 +50,17 @@ public class DbLog{
 	 * specific user from the database.
 	 */ 
 	public Line getLastLine(){
-		
+		System.out.println("Getting the last line from database");	
 		Line line = null; //will receice the information and will be returned
 		cn = MyConnection.getInstance(DB_IP, DB_PORT, DB_USER, DB_PASS).sqlConnection;	
 	
 		String query = "select * from LOGS WHERE LOG_MAC=" + mac + 
 		       " AND LOG_DATE = (SELECT MAX(LOG_DATE) FROM LOGS WHERE " + 
-	       		"LOG_MAC=" + mac + " AND LOG_TIME= (SELECT MAX(TIME) FROM " +
+	       		"LOG_MAC=" + mac + " AND LOG_TIME= (SELECT MAX(LOG_TIME) FROM " +
 	 	"LOGS WHERE LOG_MAC=" + mac + "))"; 		
 		
 		Statement stmt = null;
-
+		System.out.println("Query for get last line: " + query);
 		try{
 			stmt = cn.createStatement();
 			ResultSet rs = stmt.executeQuery(query);
@@ -76,6 +76,7 @@ public class DbLog{
 
 		}catch(Exception e){
 			e.printStackTrace();
+			System.out.println("It was not possible to get Last Line of DB");
 		}
 		/*finally{
 			cn.close(); //close the connection with db
@@ -94,10 +95,11 @@ public class DbLog{
 		String coma = "', '";
 
 		String query = "INSERT INTO LOGS (LOG_MAC, LOG_DATE," + 
-		"LOG_TIME, LOG_RESOURCE, LOG_PID, LOG_STATUS, LOG_ACTION) VALUE ('" + 
-		line.getMac() + coma +  line.getDate() + coma +  line.getTime()+
+		"LOG_TIME, LOG_RESOURCE, LOG_PID, LOG_STATUS, LOG_ACTION) VALUES ('" + 
+		line.getMac() + coma +  line.getDate() + coma +  line.getTime()+ coma + 
 	       	line.getResource() + coma + line.getPid() + coma  + line.getStatus() + 
-		coma + line.getAction() + "')";	
+		coma + line.getAction() + "')";
+		System.out.println("Query:" + query);	
 
 		try{
 			stmt = cn.createStatement();
@@ -126,9 +128,9 @@ public class DbLog{
 		
 		for(Line line : buffer){
 			insertLine(line); //add line in database
-			buffer.remove(line); //erase it from buffer
 			count++;
 		}
+		buffer.clear(); //erase it from buffer
 		return count;
 	}
 
@@ -141,7 +143,7 @@ public class DbLog{
 	public boolean findLine(Line line){
 		//get all the information to create a pk 
 		//from a line
-		int mac = line.getMac();
+		String mac = line.getMac();
 		String date = line.getDate();
 		String time = line.getTime();
 
@@ -212,11 +214,13 @@ public class DbLog{
 			ResultSet rs = stmt.executeQuery(query);
 			if(rs.next()){
 				cn.close();
-				return true;
+				System.out.println("Database not empty");
+				return false;
 			}
 			else{
 				cn.close();
-				return false;
+				System.out.println("Database empty");
+				return true;
 			}	
 
 		}catch(Exception e){

@@ -38,16 +38,16 @@ public class FileLog{
        			// in the lgo file.
 	private int numLines; //hold the number of lines that was written
 			//in the var file
-	private int mac; //identifier to create lines
+	private String mac; //identifier to create lines
 	
 	//constructor
-	public FileLog(int mac){
+	public FileLog(String mac){
 		this.mac = mac;
 		update();
 	}
 	
 	//constructor that change the path
-	public FileLog(int mac, String F2B_LOG, String VAR_FILE){
+	public FileLog(String mac, String F2B_LOG, String VAR_FILE){
 		this.mac = mac;
 		this.F2B_LOG = F2B_LOG;
 		this.VAR_FILE = VAR_FILE;
@@ -67,6 +67,7 @@ public class FileLog{
 			br = new BufferedReader(fr);
 			int counter = 0; //will count the number of lines
 			String line; //will save the lines that are being read.
+			String tempLine=""; //temporary line
 
 			while((line = br.readLine()) != null){
 				
@@ -75,11 +76,12 @@ public class FileLog{
 					this.firstLine = new Line(mac, line);
 
 				counter++;
+				tempLine = line; //always save last line
 			}
 			
 			//after go through all the lines
 			if(counter !=0)
-				this.lastLine = new Line(mac, line); // get the last line
+				this.lastLine = new Line(mac, tempLine); // get the last line
 			countLines = counter;				    	
 			numLines = getNumLines();
 
@@ -140,11 +142,10 @@ public class FileLog{
 
 			for(int i=1; i<lineNumber; i++)
 				br.readLine();
-
+			
 			Line line = new Line(this.mac, br.readLine());
-		
 			br.close();
-
+			
 			return line;
 
 		}catch(Exception e){
@@ -194,7 +195,7 @@ public class FileLog{
 			fw = new FileWriter(VAR_FILE, false);
 			bw = new BufferedWriter(fw);
 
-			bw.write(numLines);	
+			bw.write(String.valueOf(numLines));	
 			System.out.println("Wirte in " + VAR_FILE + " " + numLines);
 
 			bw.close();
