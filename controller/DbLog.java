@@ -211,8 +211,9 @@ public class DbLog{
 		int linesNumber;
 		cn = MyConnection.getInstance(DB_IP, DB_PORT, DB_USER, DB_PASS).sqlConnection;	
 		Statement stmt = null;
-		String query = "SELECT 1 FROM LOGS LIMIT 1";
+		String query = "SELECT 1 FROM LOGS WHERE LOG_MAC='" + mac +"' LIMIT 1";  //is empty for this specific user
 
+		System.out.println("isEmpty query: " + query);
 		try{
 			stmt = cn.createStatement();
 			ResultSet rs = stmt.executeQuery(query);
