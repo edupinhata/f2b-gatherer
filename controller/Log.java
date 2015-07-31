@@ -85,13 +85,13 @@ public class Log{
 		int numLines = fl.getNumLines();
 		int countLines = fl.getCountLines();
 		Line lastLine = fl.getLastLine();
-
+/*
 		System.out.println("Number of lines: " + numLines);
 		System.out.println("Count lines: " + countLines);
 		System.out.println("Db Last line date: " + dl.getLastLine().getDateTimeString());
 		System.out.println("File last line date: " + fl.getLine(numLines).getDateTimeString());
 		System.out.println("Compare lines: " + 	dl.getLastLine().compareDate(fl.getLine(numLines)));
-
+*/
 	
 		if(numLines == countLines)
 			if(!dl.isEmpty() && 
