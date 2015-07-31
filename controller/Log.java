@@ -14,14 +14,14 @@ import config.Config;
 import java.util.ArrayList;
 import java.net.InetAddress;
 import java.net.NetworkInterface;
-
+import java.nio.ByteBuffer;
 
 public class Log{
 
 
 	//attributes
 	ArrayList<Line> buffer = new ArrayList<Line>(); 
-	private int mac; //variable that will hold the unique machine identifier.
+	private String mac; //variable that will hold the unique machine identifier.
 	FileLog fl;
 	DbLog dl;	
 	Config conf;
@@ -42,10 +42,17 @@ public class Log{
 			int macInt = 0;    //contain the bytes in int
 
 
-			for(int i=0; i<mac.length; i++)
-				macInt += (10^i)*mac[i];			
+			/*for(int i=0; i<mac.length; i++)
+				macInt += (10^i)*mac[i].intValue();			
 			
-			this.mac = macInt;
+			this.mac = macInt;*/
+
+			StringBuilder sb = new StringBuilder();
+			for(int i=0; i<mac.length; i++)
+				sb.append(String.format("%02X%s", mac[i], (i<mac.length-1) ? "-" : ""));
+
+			this.mac = sb.toString(); 
+
 
 		}catch(Exception e){
 			e.printStackTrace();
@@ -79,6 +86,11 @@ public class Log{
 		int countLines = fl.getCountLines();
 		Line lastLine = fl.getLastLine();
 
+		/*System.out.println("Number of lines: " + numLines);
+		System.out.println("Count lines: " + countLines);
+		System.out.println("Db Last line date: " + dl.getLastLine().getDate());
+		System.out.println("File last line date: " + fl.getLine(1));
+	*/	
 		if(numLines == countLines)
 			if(!dl.isEmpty() && 
 			dl.getLastLine().compareDate(fl.getLine(numLines))==0)

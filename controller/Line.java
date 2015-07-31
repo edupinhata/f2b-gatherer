@@ -26,12 +26,12 @@ public class Line{
 
 	private String action;	//e.g. information of what happened - NOTICE has the ban and unban info
 
-	private int mac;  //indentify uniquely the computer that wrote the log.
+	private String mac;  //indentify uniquely the computer that wrote the log.
 
 
 
 	//Constructor
-	public Line(int mac, String date, String time, String resource, String pid,  String status, String action){
+	public Line(String mac, String date, String time, String resource, String pid,  String status, String action){
 		
 		this.mac = mac;
 		String [] splitDate = date.split("-");
@@ -56,7 +56,7 @@ public class Line{
 	}
 
 	//Constructor splitting the String log. (Easier to use in server)
-	public Line(int mac, String line){
+	public Line(String mac, String line){
 		String [] lineSplit = line.trim().split("\\s+");
 		String [] splitDate = lineSplit[0].split("-");
 		String [] splitTime = lineSplit[1].split(":|,");
@@ -68,26 +68,26 @@ public class Line{
 			Integer.parseInt(splitTime[0]),
 			Integer.parseInt(splitTime[1]),
 			Integer.parseInt(splitTime[2]),
-			Integer.parseInt(splitTime[3]));
+			Integer.parseInt(splitTime[3])*1000000);
 
 		this.resource = lineSplit[2]; 
-		this.pid = lineSplit[3];
+		this.pid = lineSplit[3].replaceAll("\\[|\\]|:", "");
 		this.status = lineSplit[4];
 		
 		//put the last parts from log in the action
 		//separated by space
 		this.action = "";
 		for(int i=5; i<lineSplit.length; i++)
-			this.status += lineSplit[i] + " ";
+			this.action += lineSplit[i] + " ";
 
-		this.action = this.action.trim();
+		this.action = this.action.replace("'", "").trim();
 	}
 
 
 
 	//Setters and Getters
 	//mac
-	public int getMac(){
+	public String getMac(){
 		return mac;
 	}
 

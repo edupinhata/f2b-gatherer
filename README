@@ -21,4 +21,4 @@ Logs can be changed and it must to fix itself for possible problems like
 	- change,
 	- database deletion
 
-	
+	- the function getLine in FIleLog can have problems when the number of line is equal to 0. 	
