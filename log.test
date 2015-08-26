@@ -1,281 +1,43 @@
 Loading following ip: 192.168.56.105
-Connection: jdbc:mysql://192.168.56.105:3306/F2B_LOGS_DB?user=blueguardian&password=123456
-Database empty
-Connection: jdbc:mysql://192.168.56.105:3306/F2B_LOGS_DB?user=blueguardian&password=123456
-Query:INSERT INTO LOGS (LOG_MAC, LOG_DATE,LOG_TIME, LOG_RESOURCE, LOG_PID, LOG_STATUS, LOG_ACTION) VALUES ('0', '2015-07-09', '13:54:09.960', 'fail2ban.server', '822', 'INFO', 'Exiting Fail2ban')
-Connection: jdbc:mysql://192.168.56.105:3306/F2B_LOGS_DB?user=blueguardian&password=123456
-Query:INSERT INTO LOGS (LOG_MAC, LOG_DATE,LOG_TIME, LOG_RESOURCE, LOG_PID, LOG_STATUS, LOG_ACTION) VALUES ('0', '2015-07-09', '13:54:10.175', 'fail2ban.server', '3944', 'INFO', 'Changed logging target to /var/log/fail2ban.log for Fail2ban v0.9.2')
-Error: could not insert line in the database.
-Query:INSERT INTO LOGS (LOG_MAC, LOG_DATE,LOG_TIME, LOG_RESOURCE, LOG_PID, LOG_STATUS, LOG_ACTION) VALUES ('0', '2015-07-09', '13:54:10.177', 'fail2ban.database', '3944', 'INFO', 'Connected to fail2ban persistent database /var/db/fail2ban/fail2ban.sqlite3')
-Error: could not insert line in the database.
-Query:INSERT INTO LOGS (LOG_MAC, LOG_DATE,LOG_TIME, LOG_RESOURCE, LOG_PID, LOG_STATUS, LOG_ACTION) VALUES ('0', '2015-07-09', '13:54:10.182', 'fail2ban.jail', '3944', 'INFO', 'Creating new jail sshd')
-Connection: jdbc:mysql://192.168.56.105:3306/F2B_LOGS_DB?user=blueguardian&password=123456
-Query:INSERT INTO LOGS (LOG_MAC, LOG_DATE,LOG_TIME, LOG_RESOURCE, LOG_PID, LOG_STATUS, LOG_ACTION) VALUES ('0', '2015-07-09', '13:54:10.191', 'fail2ban.jail', '3944', 'INFO', 'Jail sshd uses poller')
-Connection: jdbc:mysql://192.168.56.105:3306/F2B_LOGS_DB?user=blueguardian&password=123456
-Query:INSERT INTO LOGS (LOG_MAC, LOG_DATE,LOG_TIME, LOG_RESOURCE, LOG_PID, LOG_STATUS, LOG_ACTION) VALUES ('0', '2015-07-09', '13:54:10.206', 'fail2ban.filter', '3944', 'INFO', 'Set jail log file encoding to US-ASCII')
-Connection: jdbc:mysql://192.168.56.105:3306/F2B_LOGS_DB?user=blueguardian&password=123456
-Query:INSERT INTO LOGS (LOG_MAC, LOG_DATE,LOG_TIME, LOG_RESOURCE, LOG_PID, LOG_STATUS, LOG_ACTION) VALUES ('0', '2015-07-09', '13:54:10.206', 'fail2ban.jail', '3944', 'INFO', 'Initiated polling backend')
-Connection: jdbc:mysql://192.168.56.105:3306/F2B_LOGS_DB?user=blueguardian&password=123456
-Query:INSERT INTO LOGS (LOG_MAC, LOG_DATE,LOG_TIME, LOG_RESOURCE, LOG_PID, LOG_STATUS, LOG_ACTION) VALUES ('0', '2015-07-09', '13:54:10.211', 'fail2ban.filter', '3944', 'INFO', 'Added logfile = /var/log/auth.log')
-Connection: jdbc:mysql://192.168.56.105:3306/F2B_LOGS_DB?user=blueguardian&password=123456
-Query:INSERT INTO LOGS (LOG_MAC, LOG_DATE,LOG_TIME, LOG_RESOURCE, LOG_PID, LOG_STATUS, LOG_ACTION) VALUES ('0', '2015-07-09', '13:54:10.212', 'fail2ban.filter', '3944', 'INFO', 'Set maxRetry = 2')
-Connection: jdbc:mysql://192.168.56.105:3306/F2B_LOGS_DB?user=blueguardian&password=123456
-Query:INSERT INTO LOGS (LOG_MAC, LOG_DATE,LOG_TIME, LOG_RESOURCE, LOG_PID, LOG_STATUS, LOG_ACTION) VALUES ('0', '2015-07-09', '13:54:10.213', 'fail2ban.filter', '3944', 'INFO', 'Set jail log file encoding to US-ASCII')
-Error: could not insert line in the database.
-Query:INSERT INTO LOGS (LOG_MAC, LOG_DATE,LOG_TIME, LOG_RESOURCE, LOG_PID, LOG_STATUS, LOG_ACTION) VALUES ('0', '2015-07-09', '13:54:10.214', 'fail2ban.actions', '3944', 'INFO', 'Set banTime = 60')
-Connection: jdbc:mysql://192.168.56.105:3306/F2B_LOGS_DB?user=blueguardian&password=123456
-Query:INSERT INTO LOGS (LOG_MAC, LOG_DATE,LOG_TIME, LOG_RESOURCE, LOG_PID, LOG_STATUS, LOG_ACTION) VALUES ('0', '2015-07-09', '13:54:10.214', 'fail2ban.filter', '3944', 'INFO', 'Set findtime = 600')
-Connection: jdbc:mysql://192.168.56.105:3306/F2B_LOGS_DB?user=blueguardian&password=123456
-Query:INSERT INTO LOGS (LOG_MAC, LOG_DATE,LOG_TIME, LOG_RESOURCE, LOG_PID, LOG_STATUS, LOG_ACTION) VALUES ('0', '2015-07-09', '13:54:10.215', 'fail2ban.filter', '3944', 'INFO', 'Set maxlines = 10')
-Connection: jdbc:mysql://192.168.56.105:3306/F2B_LOGS_DB?user=blueguardian&password=123456
-Query:INSERT INTO LOGS (LOG_MAC, LOG_DATE,LOG_TIME, LOG_RESOURCE, LOG_PID, LOG_STATUS, LOG_ACTION) VALUES ('0', '2015-07-09', '13:54:10.268', 'fail2ban.server', '3944', 'INFO', 'Jail sshd is not a JournalFilter instance')
-Connection: jdbc:mysql://192.168.56.105:3306/F2B_LOGS_DB?user=blueguardian&password=123456
-Query:INSERT INTO LOGS (LOG_MAC, LOG_DATE,LOG_TIME, LOG_RESOURCE, LOG_PID, LOG_STATUS, LOG_ACTION) VALUES ('0', '2015-07-09', '13:54:10.272', 'fail2ban.jail', '3944', 'INFO', 'Creating new jail apache-auth')
-Connection: jdbc:mysql://192.168.56.105:3306/F2B_LOGS_DB?user=blueguardian&password=123456
-Query:INSERT INTO LOGS (LOG_MAC, LOG_DATE,LOG_TIME, LOG_RESOURCE, LOG_PID, LOG_STATUS, LOG_ACTION) VALUES ('0', '2015-07-09', '13:54:10.273', 'fail2ban.jail', '3944', 'INFO', 'Jail apache-auth uses poller')
-Connection: jdbc:mysql://192.168.56.105:3306/F2B_LOGS_DB?user=blueguardian&password=123456
-Query:INSERT INTO LOGS (LOG_MAC, LOG_DATE,LOG_TIME, LOG_RESOURCE, LOG_PID, LOG_STATUS, LOG_ACTION) VALUES ('0', '2015-07-09', '13:54:10.274', 'fail2ban.filter', '3944', 'INFO', 'Set jail log file encoding to US-ASCII')
-Error: could not insert line in the database.
-Query:INSERT INTO LOGS (LOG_MAC, LOG_DATE,LOG_TIME, LOG_RESOURCE, LOG_PID, LOG_STATUS, LOG_ACTION) VALUES ('0', '2015-07-09', '13:54:10.274', 'fail2ban.jail', '3944', 'INFO', 'Initiated polling backend')
-Error: could not insert line in the database.
-Query:INSERT INTO LOGS (LOG_MAC, LOG_DATE,LOG_TIME, LOG_RESOURCE, LOG_PID, LOG_STATUS, LOG_ACTION) VALUES ('0', '2015-07-09', '13:54:10.279', 'fail2ban.filter', '3944', 'INFO', 'Added logfile = /var/log/httpd-error.log')
-Connection: jdbc:mysql://192.168.56.105:3306/F2B_LOGS_DB?user=blueguardian&password=123456
-Query:INSERT INTO LOGS (LOG_MAC, LOG_DATE,LOG_TIME, LOG_RESOURCE, LOG_PID, LOG_STATUS, LOG_ACTION) VALUES ('0', '2015-07-09', '13:54:10.279', 'fail2ban.filter', '3944', 'INFO', 'Set maxRetry = 3')
-Connection: jdbc:mysql://192.168.56.105:3306/F2B_LOGS_DB?user=blueguardian&password=123456
-Query:INSERT INTO LOGS (LOG_MAC, LOG_DATE,LOG_TIME, LOG_RESOURCE, LOG_PID, LOG_STATUS, LOG_ACTION) VALUES ('0', '2015-07-09', '13:54:10.280', 'fail2ban.filter', '3944', 'INFO', 'Set jail log file encoding to US-ASCII')
-Error: could not insert line in the database.
-Query:INSERT INTO LOGS (LOG_MAC, LOG_DATE,LOG_TIME, LOG_RESOURCE, LOG_PID, LOG_STATUS, LOG_ACTION) VALUES ('0', '2015-07-09', '13:54:10.280', 'fail2ban.actions', '3944', 'INFO', 'Set banTime = 60')
-Error: could not insert line in the database.
-Query:INSERT INTO LOGS (LOG_MAC, LOG_DATE,LOG_TIME, LOG_RESOURCE, LOG_PID, LOG_STATUS, LOG_ACTION) VALUES ('0', '2015-07-09', '13:54:10.281', 'fail2ban.filter', '3944', 'INFO', 'Set findtime = 600')
-Error: could not insert line in the database.
-Query:INSERT INTO LOGS (LOG_MAC, LOG_DATE,LOG_TIME, LOG_RESOURCE, LOG_PID, LOG_STATUS, LOG_ACTION) VALUES ('0', '2015-07-09', '13:54:10.315', 'fail2ban.jail', '3944', 'INFO', 'Jail sshd started')
-Connection: jdbc:mysql://192.168.56.105:3306/F2B_LOGS_DB?user=blueguardian&password=123456
-Query:INSERT INTO LOGS (LOG_MAC, LOG_DATE,LOG_TIME, LOG_RESOURCE, LOG_PID, LOG_STATUS, LOG_ACTION) VALUES ('0', '2015-07-09', '13:54:10.397', 'fail2ban.filter', '3944', 'INFO', '[apache-auth] Found 192.168.56.103')
-Connection: jdbc:mysql://192.168.56.105:3306/F2B_LOGS_DB?user=blueguardian&password=123456
-Query:INSERT INTO LOGS (LOG_MAC, LOG_DATE,LOG_TIME, LOG_RESOURCE, LOG_PID, LOG_STATUS, LOG_ACTION) VALUES ('0', '2015-07-09', '13:54:10.399', 'fail2ban.filter', '3944', 'INFO', '[apache-auth] Found 192.168.56.103')
-Error: could not insert line in the database.
-Query:INSERT INTO LOGS (LOG_MAC, LOG_DATE,LOG_TIME, LOG_RESOURCE, LOG_PID, LOG_STATUS, LOG_ACTION) VALUES ('0', '2015-07-09', '13:54:10.400', 'fail2ban.filter', '3944', 'INFO', '[apache-auth] Found 192.168.56.103')
-Error: could not insert line in the database.
-Query:INSERT INTO LOGS (LOG_MAC, LOG_DATE,LOG_TIME, LOG_RESOURCE, LOG_PID, LOG_STATUS, LOG_ACTION) VALUES ('0', '2015-07-09', '13:54:10.417', 'fail2ban.jail', '3944', 'INFO', 'Jail apache-auth started')
-Connection: jdbc:mysql://192.168.56.105:3306/F2B_LOGS_DB?user=blueguardian&password=123456
-Query:INSERT INTO LOGS (LOG_MAC, LOG_DATE,LOG_TIME, LOG_RESOURCE, LOG_PID, LOG_STATUS, LOG_ACTION) VALUES ('0', '2015-07-09', '13:54:10.606', 'fail2ban.actions', '3944', 'NOTICE', '[apache-auth] Ban 192.168.56.103')
-Connection: jdbc:mysql://192.168.56.105:3306/F2B_LOGS_DB?user=blueguardian&password=123456
-Query:INSERT INTO LOGS (LOG_MAC, LOG_DATE,LOG_TIME, LOG_RESOURCE, LOG_PID, LOG_STATUS, LOG_ACTION) VALUES ('0', '2015-07-09', '13:55:11.399', 'fail2ban.actions', '3944', 'NOTICE', '[apache-auth] Unban 192.168.56.103')
-Connection: jdbc:mysql://192.168.56.105:3306/F2B_LOGS_DB?user=blueguardian&password=123456
-Query:INSERT INTO LOGS (LOG_MAC, LOG_DATE,LOG_TIME, LOG_RESOURCE, LOG_PID, LOG_STATUS, LOG_ACTION) VALUES ('0', '2015-07-09', '13:55:14.260', 'fail2ban.filter', '3944', 'INFO', '[apache-auth] Found 192.168.56.103')
-Connection: jdbc:mysql://192.168.56.105:3306/F2B_LOGS_DB?user=blueguardian&password=123456
-Query:INSERT INTO LOGS (LOG_MAC, LOG_DATE,LOG_TIME, LOG_RESOURCE, LOG_PID, LOG_STATUS, LOG_ACTION) VALUES ('0', '2015-07-09', '13:55:16.279', 'fail2ban.filter', '3944', 'INFO', '[apache-auth] Found 192.168.56.103')
-Connection: jdbc:mysql://192.168.56.105:3306/F2B_LOGS_DB?user=blueguardian&password=123456
-Query:INSERT INTO LOGS (LOG_MAC, LOG_DATE,LOG_TIME, LOG_RESOURCE, LOG_PID, LOG_STATUS, LOG_ACTION) VALUES ('0', '2015-07-09', '13:55:20.350', 'fail2ban.filter', '3944', 'INFO', '[apache-auth] Found 192.168.56.103')
-Connection: jdbc:mysql://192.168.56.105:3306/F2B_LOGS_DB?user=blueguardian&password=123456
-Query:INSERT INTO LOGS (LOG_MAC, LOG_DATE,LOG_TIME, LOG_RESOURCE, LOG_PID, LOG_STATUS, LOG_ACTION) VALUES ('0', '2015-07-09', '13:55:20.626', 'fail2ban.actions', '3944', 'NOTICE', '[apache-auth] Ban 192.168.56.103')
-Connection: jdbc:mysql://192.168.56.105:3306/F2B_LOGS_DB?user=blueguardian&password=123456
-Query:INSERT INTO LOGS (LOG_MAC, LOG_DATE,LOG_TIME, LOG_RESOURCE, LOG_PID, LOG_STATUS, LOG_ACTION) VALUES ('0', '2015-07-09', '13:56:21.440', 'fail2ban.actions', '3944', 'NOTICE', '[apache-auth] Unban 192.168.56.103')
-Connection: jdbc:mysql://192.168.56.105:3306/F2B_LOGS_DB?user=blueguardian&password=123456
-Query:INSERT INTO LOGS (LOG_MAC, LOG_DATE,LOG_TIME, LOG_RESOURCE, LOG_PID, LOG_STATUS, LOG_ACTION) VALUES ('0', '2015-07-09', '13:56:41.433', 'fail2ban.filter', '3944', 'INFO', '[apache-auth] Found 192.168.56.103')
-Connection: jdbc:mysql://192.168.56.105:3306/F2B_LOGS_DB?user=blueguardian&password=123456
-Query:INSERT INTO LOGS (LOG_MAC, LOG_DATE,LOG_TIME, LOG_RESOURCE, LOG_PID, LOG_STATUS, LOG_ACTION) VALUES ('0', '2015-07-09', '13:56:45.513', 'fail2ban.filter', '3944', 'INFO', '[apache-auth] Found 192.168.56.103')
-Connection: jdbc:mysql://192.168.56.105:3306/F2B_LOGS_DB?user=blueguardian&password=123456
-Query:INSERT INTO LOGS (LOG_MAC, LOG_DATE,LOG_TIME, LOG_RESOURCE, LOG_PID, LOG_STATUS, LOG_ACTION) VALUES ('0', '2015-07-09', '13:56:48.538', 'fail2ban.filter', '3944', 'INFO', '[apache-auth] Found 192.168.56.103')
-Connection: jdbc:mysql://192.168.56.105:3306/F2B_LOGS_DB?user=blueguardian&password=123456
-Query:INSERT INTO LOGS (LOG_MAC, LOG_DATE,LOG_TIME, LOG_RESOURCE, LOG_PID, LOG_STATUS, LOG_ACTION) VALUES ('0', '2015-07-09', '13:56:48.860', 'fail2ban.actions', '3944', 'NOTICE', '[apache-auth] Ban 192.168.56.103')
-Connection: jdbc:mysql://192.168.56.105:3306/F2B_LOGS_DB?user=blueguardian&password=123456
-Query:INSERT INTO LOGS (LOG_MAC, LOG_DATE,LOG_TIME, LOG_RESOURCE, LOG_PID, LOG_STATUS, LOG_ACTION) VALUES ('0', '2015-07-09', '13:57:49.677', 'fail2ban.actions', '3944', 'NOTICE', '[apache-auth] Unban 192.168.56.103')
-Connection: jdbc:mysql://192.168.56.105:3306/F2B_LOGS_DB?user=blueguardian&password=123456
-Query:INSERT INTO LOGS (LOG_MAC, LOG_DATE,LOG_TIME, LOG_RESOURCE, LOG_PID, LOG_STATUS, LOG_ACTION) VALUES ('0', '2015-07-09', '14:05:28.901', 'fail2ban.filter', '3944', 'INFO', '[apache-auth] Found 192.168.56.103')
-Connection: jdbc:mysql://192.168.56.105:3306/F2B_LOGS_DB?user=blueguardian&password=123456
-Query:INSERT INTO LOGS (LOG_MAC, LOG_DATE,LOG_TIME, LOG_RESOURCE, LOG_PID, LOG_STATUS, LOG_ACTION) VALUES ('0', '2015-07-09', '14:05:32.941', 'fail2ban.filter', '3944', 'INFO', '[apache-auth] Found 192.168.56.103')
-Connection: jdbc:mysql://192.168.56.105:3306/F2B_LOGS_DB?user=blueguardian&password=123456
-Query:INSERT INTO LOGS (LOG_MAC, LOG_DATE,LOG_TIME, LOG_RESOURCE, LOG_PID, LOG_STATUS, LOG_ACTION) VALUES ('0', '2015-07-09', '14:05:36.981', 'fail2ban.filter', '3944', 'INFO', '[apache-auth] Found 192.168.56.103')
-Connection: jdbc:mysql://192.168.56.105:3306/F2B_LOGS_DB?user=blueguardian&password=123456
-Query:INSERT INTO LOGS (LOG_MAC, LOG_DATE,LOG_TIME, LOG_RESOURCE, LOG_PID, LOG_STATUS, LOG_ACTION) VALUES ('0', '2015-07-09', '14:05:37.463', 'fail2ban.actions', '3944', 'NOTICE', '[apache-auth] Ban 192.168.56.103')
-Connection: jdbc:mysql://192.168.56.105:3306/F2B_LOGS_DB?user=blueguardian&password=123456
-Query:INSERT INTO LOGS (LOG_MAC, LOG_DATE,LOG_TIME, LOG_RESOURCE, LOG_PID, LOG_STATUS, LOG_ACTION) VALUES ('0', '2015-07-09', '14:06:38.209', 'fail2ban.actions', '3944', 'NOTICE', '[apache-auth] Unban 192.168.56.103')
-Connection: jdbc:mysql://192.168.56.105:3306/F2B_LOGS_DB?user=blueguardian&password=123456
-Query:INSERT INTO LOGS (LOG_MAC, LOG_DATE,LOG_TIME, LOG_RESOURCE, LOG_PID, LOG_STATUS, LOG_ACTION) VALUES ('0', '2015-07-09', '14:12:49.279', 'fail2ban.filter', '3944', 'INFO', '[apache-auth] Found 192.168.56.103')
-Connection: jdbc:mysql://192.168.56.105:3306/F2B_LOGS_DB?user=blueguardian&password=123456
-Query:INSERT INTO LOGS (LOG_MAC, LOG_DATE,LOG_TIME, LOG_RESOURCE, LOG_PID, LOG_STATUS, LOG_ACTION) VALUES ('0', '2015-07-09', '14:12:54.330', 'fail2ban.filter', '3944', 'INFO', '[apache-auth] Found 192.168.56.103')
-Connection: jdbc:mysql://192.168.56.105:3306/F2B_LOGS_DB?user=blueguardian&password=123456
-Query:INSERT INTO LOGS (LOG_MAC, LOG_DATE,LOG_TIME, LOG_RESOURCE, LOG_PID, LOG_STATUS, LOG_ACTION) VALUES ('0', '2015-07-09', '14:12:58.368', 'fail2ban.filter', '3944', 'INFO', '[apache-auth] Found 192.168.56.103')
-Connection: jdbc:mysql://192.168.56.105:3306/F2B_LOGS_DB?user=blueguardian&password=123456
-Query:INSERT INTO LOGS (LOG_MAC, LOG_DATE,LOG_TIME, LOG_RESOURCE, LOG_PID, LOG_STATUS, LOG_ACTION) VALUES ('0', '2015-07-09', '14:12:58.908', 'fail2ban.actions', '3944', 'NOTICE', '[apache-auth] Ban 192.168.56.103')
-Connection: jdbc:mysql://192.168.56.105:3306/F2B_LOGS_DB?user=blueguardian&password=123456
-Query:INSERT INTO LOGS (LOG_MAC, LOG_DATE,LOG_TIME, LOG_RESOURCE, LOG_PID, LOG_STATUS, LOG_ACTION) VALUES ('0', '2015-07-09', '14:13:59.778', 'fail2ban.actions', '3944', 'NOTICE', '[apache-auth] Unban 192.168.56.103')
-Connection: jdbc:mysql://192.168.56.105:3306/F2B_LOGS_DB?user=blueguardian&password=123456
-Query:INSERT INTO LOGS (LOG_MAC, LOG_DATE,LOG_TIME, LOG_RESOURCE, LOG_PID, LOG_STATUS, LOG_ACTION) VALUES ('0', '2015-07-09', '14:23:02.739', 'fail2ban.filter', '3944', 'INFO', '[apache-auth] Found 192.168.56.103')
-Connection: jdbc:mysql://192.168.56.105:3306/F2B_LOGS_DB?user=blueguardian&password=123456
-Query:INSERT INTO LOGS (LOG_MAC, LOG_DATE,LOG_TIME, LOG_RESOURCE, LOG_PID, LOG_STATUS, LOG_ACTION) VALUES ('0', '2015-07-10', '10:14:42.665', 'fail2ban.filter', '3944', 'INFO', '[apache-auth] Found 192.168.56.103')
-Connection: jdbc:mysql://192.168.56.105:3306/F2B_LOGS_DB?user=blueguardian&password=123456
-Query:INSERT INTO LOGS (LOG_MAC, LOG_DATE,LOG_TIME, LOG_RESOURCE, LOG_PID, LOG_STATUS, LOG_ACTION) VALUES ('0', '2015-07-10', '10:14:45.707', 'fail2ban.filter', '3944', 'INFO', '[apache-auth] Found 192.168.56.103')
-Connection: jdbc:mysql://192.168.56.105:3306/F2B_LOGS_DB?user=blueguardian&password=123456
-Query:INSERT INTO LOGS (LOG_MAC, LOG_DATE,LOG_TIME, LOG_RESOURCE, LOG_PID, LOG_STATUS, LOG_ACTION) VALUES ('0', '2015-07-10', '10:14:48.735', 'fail2ban.filter', '3944', 'INFO', '[apache-auth] Found 192.168.56.103')
-Connection: jdbc:mysql://192.168.56.105:3306/F2B_LOGS_DB?user=blueguardian&password=123456
-Query:INSERT INTO LOGS (LOG_MAC, LOG_DATE,LOG_TIME, LOG_RESOURCE, LOG_PID, LOG_STATUS, LOG_ACTION) VALUES ('0', '2015-07-10', '10:14:49.745', 'fail2ban.actions', '3944', 'NOTICE', '[apache-auth] Ban 192.168.56.103')
-Connection: jdbc:mysql://192.168.56.105:3306/F2B_LOGS_DB?user=blueguardian&password=123456
-Query:INSERT INTO LOGS (LOG_MAC, LOG_DATE,LOG_TIME, LOG_RESOURCE, LOG_PID, LOG_STATUS, LOG_ACTION) VALUES ('0', '2015-07-10', '10:15:50.598', 'fail2ban.actions', '3944', 'NOTICE', '[apache-auth] Unban 192.168.56.103')
-Connection: jdbc:mysql://192.168.56.105:3306/F2B_LOGS_DB?user=blueguardian&password=123456
-Query:INSERT INTO LOGS (LOG_MAC, LOG_DATE,LOG_TIME, LOG_RESOURCE, LOG_PID, LOG_STATUS, LOG_ACTION) VALUES ('0', '2015-07-10', '10:16:28.887', 'fail2ban.filter', '3944', 'INFO', '[apache-auth] Found 192.168.56.103')
-Connection: jdbc:mysql://192.168.56.105:3306/F2B_LOGS_DB?user=blueguardian&password=123456
-Query:INSERT INTO LOGS (LOG_MAC, LOG_DATE,LOG_TIME, LOG_RESOURCE, LOG_PID, LOG_STATUS, LOG_ACTION) VALUES ('0', '2015-07-10', '10:17:02.345', 'fail2ban.filter', '3944', 'INFO', '[apache-auth] Found 192.168.56.103')
-Connection: jdbc:mysql://192.168.56.105:3306/F2B_LOGS_DB?user=blueguardian&password=123456
-Query:INSERT INTO LOGS (LOG_MAC, LOG_DATE,LOG_TIME, LOG_RESOURCE, LOG_PID, LOG_STATUS, LOG_ACTION) VALUES ('0', '2015-07-10', '10:17:05.375', 'fail2ban.filter', '3944', 'INFO', '[apache-auth] Found 192.168.56.103')
-Connection: jdbc:mysql://192.168.56.105:3306/F2B_LOGS_DB?user=blueguardian&password=123456
-Query:INSERT INTO LOGS (LOG_MAC, LOG_DATE,LOG_TIME, LOG_RESOURCE, LOG_PID, LOG_STATUS, LOG_ACTION) VALUES ('0', '2015-07-10', '10:17:05.577', 'fail2ban.actions', '3944', 'NOTICE', '[apache-auth] Ban 192.168.56.103')
-Connection: jdbc:mysql://192.168.56.105:3306/F2B_LOGS_DB?user=blueguardian&password=123456
-Query:INSERT INTO LOGS (LOG_MAC, LOG_DATE,LOG_TIME, LOG_RESOURCE, LOG_PID, LOG_STATUS, LOG_ACTION) VALUES ('0', '2015-07-10', '10:18:06.410', 'fail2ban.actions', '3944', 'NOTICE', '[apache-auth] Unban 192.168.56.103')
-Connection: jdbc:mysql://192.168.56.105:3306/F2B_LOGS_DB?user=blueguardian&password=123456
-Query:INSERT INTO LOGS (LOG_MAC, LOG_DATE,LOG_TIME, LOG_RESOURCE, LOG_PID, LOG_STATUS, LOG_ACTION) VALUES ('0', '2015-07-10', '10:22:10.147', 'fail2ban.filter', '3944', 'INFO', '[apache-auth] Found 192.168.56.103')
-Connection: jdbc:mysql://192.168.56.105:3306/F2B_LOGS_DB?user=blueguardian&password=123456
-Query:INSERT INTO LOGS (LOG_MAC, LOG_DATE,LOG_TIME, LOG_RESOURCE, LOG_PID, LOG_STATUS, LOG_ACTION) VALUES ('0', '2015-07-13', '19:22:18.341', 'fail2ban.server', '3944', 'INFO', 'Exiting Fail2ban')
-Connection: jdbc:mysql://192.168.56.105:3306/F2B_LOGS_DB?user=blueguardian&password=123456
-Query:INSERT INTO LOGS (LOG_MAC, LOG_DATE,LOG_TIME, LOG_RESOURCE, LOG_PID, LOG_STATUS, LOG_ACTION) VALUES ('0', '2015-07-27', '13:51:27.878', 'fail2ban.server', '831', 'INFO', 'Changed logging target to /var/log/fail2ban.log for Fail2ban v0.9.2')
-Error: could not insert line in the database.
-Query:INSERT INTO LOGS (LOG_MAC, LOG_DATE,LOG_TIME, LOG_RESOURCE, LOG_PID, LOG_STATUS, LOG_ACTION) VALUES ('0', '2015-07-27', '13:51:27.885', 'fail2ban.database', '831', 'INFO', 'Connected to fail2ban persistent database /var/db/fail2ban/fail2ban.sqlite3')
-Error: could not insert line in the database.
-Query:INSERT INTO LOGS (LOG_MAC, LOG_DATE,LOG_TIME, LOG_RESOURCE, LOG_PID, LOG_STATUS, LOG_ACTION) VALUES ('0', '2015-07-27', '13:51:27.897', 'fail2ban.jail', '831', 'INFO', 'Creating new jail sshd')
-Connection: jdbc:mysql://192.168.56.105:3306/F2B_LOGS_DB?user=blueguardian&password=123456
-Query:INSERT INTO LOGS (LOG_MAC, LOG_DATE,LOG_TIME, LOG_RESOURCE, LOG_PID, LOG_STATUS, LOG_ACTION) VALUES ('0', '2015-07-27', '13:51:27.905', 'fail2ban.jail', '831', 'INFO', 'Jail sshd uses poller')
-Connection: jdbc:mysql://192.168.56.105:3306/F2B_LOGS_DB?user=blueguardian&password=123456
-Query:INSERT INTO LOGS (LOG_MAC, LOG_DATE,LOG_TIME, LOG_RESOURCE, LOG_PID, LOG_STATUS, LOG_ACTION) VALUES ('0', '2015-07-27', '13:51:27.918', 'fail2ban.filter', '831', 'INFO', 'Set jail log file encoding to US-ASCII')
-Connection: jdbc:mysql://192.168.56.105:3306/F2B_LOGS_DB?user=blueguardian&password=123456
-Query:INSERT INTO LOGS (LOG_MAC, LOG_DATE,LOG_TIME, LOG_RESOURCE, LOG_PID, LOG_STATUS, LOG_ACTION) VALUES ('0', '2015-07-27', '13:51:27.919', 'fail2ban.jail', '831', 'INFO', 'Initiated polling backend')
-Connection: jdbc:mysql://192.168.56.105:3306/F2B_LOGS_DB?user=blueguardian&password=123456
-Query:INSERT INTO LOGS (LOG_MAC, LOG_DATE,LOG_TIME, LOG_RESOURCE, LOG_PID, LOG_STATUS, LOG_ACTION) VALUES ('0', '2015-07-27', '13:51:27.926', 'fail2ban.filter', '831', 'INFO', 'Added logfile = /var/log/auth.log')
-Connection: jdbc:mysql://192.168.56.105:3306/F2B_LOGS_DB?user=blueguardian&password=123456
-Query:INSERT INTO LOGS (LOG_MAC, LOG_DATE,LOG_TIME, LOG_RESOURCE, LOG_PID, LOG_STATUS, LOG_ACTION) VALUES ('0', '2015-07-27', '13:51:27.927', 'fail2ban.filter', '831', 'INFO', 'Set maxRetry = 2')
-Connection: jdbc:mysql://192.168.56.105:3306/F2B_LOGS_DB?user=blueguardian&password=123456
-Query:INSERT INTO LOGS (LOG_MAC, LOG_DATE,LOG_TIME, LOG_RESOURCE, LOG_PID, LOG_STATUS, LOG_ACTION) VALUES ('0', '2015-07-27', '13:51:27.928', 'fail2ban.filter', '831', 'INFO', 'Set jail log file encoding to US-ASCII')
-Error: could not insert line in the database.
-Query:INSERT INTO LOGS (LOG_MAC, LOG_DATE,LOG_TIME, LOG_RESOURCE, LOG_PID, LOG_STATUS, LOG_ACTION) VALUES ('0', '2015-07-27', '13:51:27.928', 'fail2ban.actions', '831', 'INFO', 'Set banTime = 60')
-Connection: jdbc:mysql://192.168.56.105:3306/F2B_LOGS_DB?user=blueguardian&password=123456
-Query:INSERT INTO LOGS (LOG_MAC, LOG_DATE,LOG_TIME, LOG_RESOURCE, LOG_PID, LOG_STATUS, LOG_ACTION) VALUES ('0', '2015-07-27', '13:51:27.929', 'fail2ban.filter', '831', 'INFO', 'Set findtime = 600')
-Connection: jdbc:mysql://192.168.56.105:3306/F2B_LOGS_DB?user=blueguardian&password=123456
-Query:INSERT INTO LOGS (LOG_MAC, LOG_DATE,LOG_TIME, LOG_RESOURCE, LOG_PID, LOG_STATUS, LOG_ACTION) VALUES ('0', '2015-07-27', '13:51:27.929', 'fail2ban.filter', '831', 'INFO', 'Set maxlines = 10')
-Connection: jdbc:mysql://192.168.56.105:3306/F2B_LOGS_DB?user=blueguardian&password=123456
-Query:INSERT INTO LOGS (LOG_MAC, LOG_DATE,LOG_TIME, LOG_RESOURCE, LOG_PID, LOG_STATUS, LOG_ACTION) VALUES ('0', '2015-07-27', '13:51:27.979', 'fail2ban.server', '831', 'INFO', 'Jail sshd is not a JournalFilter instance')
-Connection: jdbc:mysql://192.168.56.105:3306/F2B_LOGS_DB?user=blueguardian&password=123456
-Query:INSERT INTO LOGS (LOG_MAC, LOG_DATE,LOG_TIME, LOG_RESOURCE, LOG_PID, LOG_STATUS, LOG_ACTION) VALUES ('0', '2015-07-27', '13:51:27.983', 'fail2ban.jail', '831', 'INFO', 'Creating new jail apache-auth')
-Connection: jdbc:mysql://192.168.56.105:3306/F2B_LOGS_DB?user=blueguardian&password=123456
-Query:INSERT INTO LOGS (LOG_MAC, LOG_DATE,LOG_TIME, LOG_RESOURCE, LOG_PID, LOG_STATUS, LOG_ACTION) VALUES ('0', '2015-07-27', '13:51:27.984', 'fail2ban.jail', '831', 'INFO', 'Jail apache-auth uses poller')
-Connection: jdbc:mysql://192.168.56.105:3306/F2B_LOGS_DB?user=blueguardian&password=123456
-Query:INSERT INTO LOGS (LOG_MAC, LOG_DATE,LOG_TIME, LOG_RESOURCE, LOG_PID, LOG_STATUS, LOG_ACTION) VALUES ('0', '2015-07-27', '13:51:27.985', 'fail2ban.filter', '831', 'INFO', 'Set jail log file encoding to US-ASCII')
-Error: could not insert line in the database.
-Query:INSERT INTO LOGS (LOG_MAC, LOG_DATE,LOG_TIME, LOG_RESOURCE, LOG_PID, LOG_STATUS, LOG_ACTION) VALUES ('0', '2015-07-27', '13:51:27.985', 'fail2ban.jail', '831', 'INFO', 'Initiated polling backend')
-Error: could not insert line in the database.
-Query:INSERT INTO LOGS (LOG_MAC, LOG_DATE,LOG_TIME, LOG_RESOURCE, LOG_PID, LOG_STATUS, LOG_ACTION) VALUES ('0', '2015-07-27', '13:51:27.990', 'fail2ban.filter', '831', 'INFO', 'Added logfile = /var/log/httpd-error.log')
-Connection: jdbc:mysql://192.168.56.105:3306/F2B_LOGS_DB?user=blueguardian&password=123456
-Query:INSERT INTO LOGS (LOG_MAC, LOG_DATE,LOG_TIME, LOG_RESOURCE, LOG_PID, LOG_STATUS, LOG_ACTION) VALUES ('0', '2015-07-27', '13:51:27.991', 'fail2ban.filter', '831', 'INFO', 'Set maxRetry = 3')
-Connection: jdbc:mysql://192.168.56.105:3306/F2B_LOGS_DB?user=blueguardian&password=123456
-Query:INSERT INTO LOGS (LOG_MAC, LOG_DATE,LOG_TIME, LOG_RESOURCE, LOG_PID, LOG_STATUS, LOG_ACTION) VALUES ('0', '2015-07-27', '13:51:27.992', 'fail2ban.filter', '831', 'INFO', 'Set jail log file encoding to US-ASCII')
-Error: could not insert line in the database.
-Query:INSERT INTO LOGS (LOG_MAC, LOG_DATE,LOG_TIME, LOG_RESOURCE, LOG_PID, LOG_STATUS, LOG_ACTION) VALUES ('0', '2015-07-27', '13:51:27.992', 'fail2ban.actions', '831', 'INFO', 'Set banTime = 60')
-Error: could not insert line in the database.
-Query:INSERT INTO LOGS (LOG_MAC, LOG_DATE,LOG_TIME, LOG_RESOURCE, LOG_PID, LOG_STATUS, LOG_ACTION) VALUES ('0', '2015-07-27', '13:51:27.993', 'fail2ban.filter', '831', 'INFO', 'Set findtime = 600')
-Error: could not insert line in the database.
-Query:INSERT INTO LOGS (LOG_MAC, LOG_DATE,LOG_TIME, LOG_RESOURCE, LOG_PID, LOG_STATUS, LOG_ACTION) VALUES ('0', '2015-07-27', '13:51:28.021', 'fail2ban.jail', '831', 'INFO', 'Jail sshd started')
-Connection: jdbc:mysql://192.168.56.105:3306/F2B_LOGS_DB?user=blueguardian&password=123456
-Query:INSERT INTO LOGS (LOG_MAC, LOG_DATE,LOG_TIME, LOG_RESOURCE, LOG_PID, LOG_STATUS, LOG_ACTION) VALUES ('0', '2015-07-27', '13:51:28.084', 'fail2ban.jail', '831', 'INFO', 'Jail apache-auth started')
-Connection: jdbc:mysql://192.168.56.105:3306/F2B_LOGS_DB?user=blueguardian&password=123456
-Query:INSERT INTO LOGS (LOG_MAC, LOG_DATE,LOG_TIME, LOG_RESOURCE, LOG_PID, LOG_STATUS, LOG_ACTION) VALUES ('0', '2015-07-28', '01:55:50.809', 'fail2ban.server', '831', 'INFO', 'Stopping all jails')
-Connection: jdbc:mysql://192.168.56.105:3306/F2B_LOGS_DB?user=blueguardian&password=123456
-Query:INSERT INTO LOGS (LOG_MAC, LOG_DATE,LOG_TIME, LOG_RESOURCE, LOG_PID, LOG_STATUS, LOG_ACTION) VALUES ('0', '2015-07-28', '01:56:32.837', 'fail2ban.server', '803', 'INFO', 'Changed logging target to /var/log/fail2ban.log for Fail2ban v0.9.2')
-Error: could not insert line in the database.
-Query:INSERT INTO LOGS (LOG_MAC, LOG_DATE,LOG_TIME, LOG_RESOURCE, LOG_PID, LOG_STATUS, LOG_ACTION) VALUES ('0', '2015-07-28', '01:56:32.841', 'fail2ban.database', '803', 'INFO', 'Connected to fail2ban persistent database /var/db/fail2ban/fail2ban.sqlite3')
-Error: could not insert line in the database.
-Query:INSERT INTO LOGS (LOG_MAC, LOG_DATE,LOG_TIME, LOG_RESOURCE, LOG_PID, LOG_STATUS, LOG_ACTION) VALUES ('0', '2015-07-28', '01:56:32.850', 'fail2ban.jail', '803', 'INFO', 'Creating new jail sshd')
-Connection: jdbc:mysql://192.168.56.105:3306/F2B_LOGS_DB?user=blueguardian&password=123456
-Query:INSERT INTO LOGS (LOG_MAC, LOG_DATE,LOG_TIME, LOG_RESOURCE, LOG_PID, LOG_STATUS, LOG_ACTION) VALUES ('0', '2015-07-28', '01:56:32.862', 'fail2ban.jail', '803', 'INFO', 'Jail sshd uses poller')
-Connection: jdbc:mysql://192.168.56.105:3306/F2B_LOGS_DB?user=blueguardian&password=123456
-Query:INSERT INTO LOGS (LOG_MAC, LOG_DATE,LOG_TIME, LOG_RESOURCE, LOG_PID, LOG_STATUS, LOG_ACTION) VALUES ('0', '2015-07-28', '01:56:32.877', 'fail2ban.filter', '803', 'INFO', 'Set jail log file encoding to US-ASCII')
-Connection: jdbc:mysql://192.168.56.105:3306/F2B_LOGS_DB?user=blueguardian&password=123456
-Query:INSERT INTO LOGS (LOG_MAC, LOG_DATE,LOG_TIME, LOG_RESOURCE, LOG_PID, LOG_STATUS, LOG_ACTION) VALUES ('0', '2015-07-28', '01:56:32.877', 'fail2ban.jail', '803', 'INFO', 'Initiated polling backend')
-Connection: jdbc:mysql://192.168.56.105:3306/F2B_LOGS_DB?user=blueguardian&password=123456
-Query:INSERT INTO LOGS (LOG_MAC, LOG_DATE,LOG_TIME, LOG_RESOURCE, LOG_PID, LOG_STATUS, LOG_ACTION) VALUES ('0', '2015-07-28', '01:56:32.883', 'fail2ban.filter', '803', 'INFO', 'Added logfile = /var/log/auth.log')
-Connection: jdbc:mysql://192.168.56.105:3306/F2B_LOGS_DB?user=blueguardian&password=123456
-Query:INSERT INTO LOGS (LOG_MAC, LOG_DATE,LOG_TIME, LOG_RESOURCE, LOG_PID, LOG_STATUS, LOG_ACTION) VALUES ('0', '2015-07-28', '01:56:32.884', 'fail2ban.filter', '803', 'INFO', 'Set maxRetry = 2')
-Connection: jdbc:mysql://192.168.56.105:3306/F2B_LOGS_DB?user=blueguardian&password=123456
-Query:INSERT INTO LOGS (LOG_MAC, LOG_DATE,LOG_TIME, LOG_RESOURCE, LOG_PID, LOG_STATUS, LOG_ACTION) VALUES ('0', '2015-07-28', '01:56:32.885', 'fail2ban.filter', '803', 'INFO', 'Set jail log file encoding to US-ASCII')
-Error: could not insert line in the database.
-Query:INSERT INTO LOGS (LOG_MAC, LOG_DATE,LOG_TIME, LOG_RESOURCE, LOG_PID, LOG_STATUS, LOG_ACTION) VALUES ('0', '2015-07-28', '01:56:32.885', 'fail2ban.actions', '803', 'INFO', 'Set banTime = 60')
-Connection: jdbc:mysql://192.168.56.105:3306/F2B_LOGS_DB?user=blueguardian&password=123456
-Query:INSERT INTO LOGS (LOG_MAC, LOG_DATE,LOG_TIME, LOG_RESOURCE, LOG_PID, LOG_STATUS, LOG_ACTION) VALUES ('0', '2015-07-28', '01:56:32.886', 'fail2ban.filter', '803', 'INFO', 'Set findtime = 600')
-Connection: jdbc:mysql://192.168.56.105:3306/F2B_LOGS_DB?user=blueguardian&password=123456
-Query:INSERT INTO LOGS (LOG_MAC, LOG_DATE,LOG_TIME, LOG_RESOURCE, LOG_PID, LOG_STATUS, LOG_ACTION) VALUES ('0', '2015-07-28', '01:56:32.886', 'fail2ban.filter', '803', 'INFO', 'Set maxlines = 10')
-Connection: jdbc:mysql://192.168.56.105:3306/F2B_LOGS_DB?user=blueguardian&password=123456
-Query:INSERT INTO LOGS (LOG_MAC, LOG_DATE,LOG_TIME, LOG_RESOURCE, LOG_PID, LOG_STATUS, LOG_ACTION) VALUES ('0', '2015-07-28', '01:56:32.938', 'fail2ban.server', '803', 'INFO', 'Jail sshd is not a JournalFilter instance')
-Connection: jdbc:mysql://192.168.56.105:3306/F2B_LOGS_DB?user=blueguardian&password=123456
-Query:INSERT INTO LOGS (LOG_MAC, LOG_DATE,LOG_TIME, LOG_RESOURCE, LOG_PID, LOG_STATUS, LOG_ACTION) VALUES ('0', '2015-07-28', '01:56:32.943', 'fail2ban.jail', '803', 'INFO', 'Creating new jail apache-auth')
-Connection: jdbc:mysql://192.168.56.105:3306/F2B_LOGS_DB?user=blueguardian&password=123456
-Query:INSERT INTO LOGS (LOG_MAC, LOG_DATE,LOG_TIME, LOG_RESOURCE, LOG_PID, LOG_STATUS, LOG_ACTION) VALUES ('0', '2015-07-28', '01:56:32.943', 'fail2ban.jail', '803', 'INFO', 'Jail apache-auth uses poller')
-Connection: jdbc:mysql://192.168.56.105:3306/F2B_LOGS_DB?user=blueguardian&password=123456
-Query:INSERT INTO LOGS (LOG_MAC, LOG_DATE,LOG_TIME, LOG_RESOURCE, LOG_PID, LOG_STATUS, LOG_ACTION) VALUES ('0', '2015-07-28', '01:56:32.944', 'fail2ban.filter', '803', 'INFO', 'Set jail log file encoding to US-ASCII')
-Error: could not insert line in the database.
-Query:INSERT INTO LOGS (LOG_MAC, LOG_DATE,LOG_TIME, LOG_RESOURCE, LOG_PID, LOG_STATUS, LOG_ACTION) VALUES ('0', '2015-07-28', '01:56:32.944', 'fail2ban.jail', '803', 'INFO', 'Initiated polling backend')
-Error: could not insert line in the database.
-Query:INSERT INTO LOGS (LOG_MAC, LOG_DATE,LOG_TIME, LOG_RESOURCE, LOG_PID, LOG_STATUS, LOG_ACTION) VALUES ('0', '2015-07-28', '01:56:32.959', 'fail2ban.filter', '803', 'INFO', 'Added logfile = /var/log/httpd-error.log')
-Connection: jdbc:mysql://192.168.56.105:3306/F2B_LOGS_DB?user=blueguardian&password=123456
-Query:INSERT INTO LOGS (LOG_MAC, LOG_DATE,LOG_TIME, LOG_RESOURCE, LOG_PID, LOG_STATUS, LOG_ACTION) VALUES ('0', '2015-07-28', '01:56:32.959', 'fail2ban.filter', '803', 'INFO', 'Set maxRetry = 3')
-Connection: jdbc:mysql://192.168.56.105:3306/F2B_LOGS_DB?user=blueguardian&password=123456
-Query:INSERT INTO LOGS (LOG_MAC, LOG_DATE,LOG_TIME, LOG_RESOURCE, LOG_PID, LOG_STATUS, LOG_ACTION) VALUES ('0', '2015-07-28', '01:56:32.960', 'fail2ban.filter', '803', 'INFO', 'Set jail log file encoding to US-ASCII')
-Error: could not insert line in the database.
-Query:INSERT INTO LOGS (LOG_MAC, LOG_DATE,LOG_TIME, LOG_RESOURCE, LOG_PID, LOG_STATUS, LOG_ACTION) VALUES ('0', '2015-07-28', '01:56:32.960', 'fail2ban.actions', '803', 'INFO', 'Set banTime = 60')
-Error: could not insert line in the database.
-Query:INSERT INTO LOGS (LOG_MAC, LOG_DATE,LOG_TIME, LOG_RESOURCE, LOG_PID, LOG_STATUS, LOG_ACTION) VALUES ('0', '2015-07-28', '01:56:32.961', 'fail2ban.filter', '803', 'INFO', 'Set findtime = 600')
-Error: could not insert line in the database.
-Query:INSERT INTO LOGS (LOG_MAC, LOG_DATE,LOG_TIME, LOG_RESOURCE, LOG_PID, LOG_STATUS, LOG_ACTION) VALUES ('0', '2015-07-28', '01:56:32.990', 'fail2ban.jail', '803', 'INFO', 'Jail sshd started')
-Connection: jdbc:mysql://192.168.56.105:3306/F2B_LOGS_DB?user=blueguardian&password=123456
-Query:INSERT INTO LOGS (LOG_MAC, LOG_DATE,LOG_TIME, LOG_RESOURCE, LOG_PID, LOG_STATUS, LOG_ACTION) VALUES ('0', '2015-07-28', '01:56:33.039', 'fail2ban.jail', '803', 'INFO', 'Jail apache-auth started')
-Connection: jdbc:mysql://192.168.56.105:3306/F2B_LOGS_DB?user=blueguardian&password=123456
-Query:INSERT INTO LOGS (LOG_MAC, LOG_DATE,LOG_TIME, LOG_RESOURCE, LOG_PID, LOG_STATUS, LOG_ACTION) VALUES ('0', '2015-07-29', '22:26:06.267', 'fail2ban.server', '823', 'INFO', 'Changed logging target to /var/log/fail2ban.log for Fail2ban v0.9.2')
-Error: could not insert line in the database.
-Query:INSERT INTO LOGS (LOG_MAC, LOG_DATE,LOG_TIME, LOG_RESOURCE, LOG_PID, LOG_STATUS, LOG_ACTION) VALUES ('0', '2015-07-29', '22:26:06.274', 'fail2ban.database', '823', 'INFO', 'Connected to fail2ban persistent database /var/db/fail2ban/fail2ban.sqlite3')
-Error: could not insert line in the database.
-Query:INSERT INTO LOGS (LOG_MAC, LOG_DATE,LOG_TIME, LOG_RESOURCE, LOG_PID, LOG_STATUS, LOG_ACTION) VALUES ('0', '2015-07-29', '22:26:06.284', 'fail2ban.jail', '823', 'INFO', 'Creating new jail sshd')
-Connection: jdbc:mysql://192.168.56.105:3306/F2B_LOGS_DB?user=blueguardian&password=123456
-Query:INSERT INTO LOGS (LOG_MAC, LOG_DATE,LOG_TIME, LOG_RESOURCE, LOG_PID, LOG_STATUS, LOG_ACTION) VALUES ('0', '2015-07-29', '22:26:06.293', 'fail2ban.jail', '823', 'INFO', 'Jail sshd uses poller')
-Connection: jdbc:mysql://192.168.56.105:3306/F2B_LOGS_DB?user=blueguardian&password=123456
-Query:INSERT INTO LOGS (LOG_MAC, LOG_DATE,LOG_TIME, LOG_RESOURCE, LOG_PID, LOG_STATUS, LOG_ACTION) VALUES ('0', '2015-07-29', '22:26:06.307', 'fail2ban.filter', '823', 'INFO', 'Set jail log file encoding to US-ASCII')
-Connection: jdbc:mysql://192.168.56.105:3306/F2B_LOGS_DB?user=blueguardian&password=123456
-Query:INSERT INTO LOGS (LOG_MAC, LOG_DATE,LOG_TIME, LOG_RESOURCE, LOG_PID, LOG_STATUS, LOG_ACTION) VALUES ('0', '2015-07-29', '22:26:06.307', 'fail2ban.jail', '823', 'INFO', 'Initiated polling backend')
-Connection: jdbc:mysql://192.168.56.105:3306/F2B_LOGS_DB?user=blueguardian&password=123456
-Query:INSERT INTO LOGS (LOG_MAC, LOG_DATE,LOG_TIME, LOG_RESOURCE, LOG_PID, LOG_STATUS, LOG_ACTION) VALUES ('0', '2015-07-29', '22:26:06.314', 'fail2ban.filter', '823', 'INFO', 'Added logfile = /var/log/auth.log')
-Connection: jdbc:mysql://192.168.56.105:3306/F2B_LOGS_DB?user=blueguardian&password=123456
-Query:INSERT INTO LOGS (LOG_MAC, LOG_DATE,LOG_TIME, LOG_RESOURCE, LOG_PID, LOG_STATUS, LOG_ACTION) VALUES ('0', '2015-07-29', '22:26:06.315', 'fail2ban.filter', '823', 'INFO', 'Set maxRetry = 2')
-Connection: jdbc:mysql://192.168.56.105:3306/F2B_LOGS_DB?user=blueguardian&password=123456
-Query:INSERT INTO LOGS (LOG_MAC, LOG_DATE,LOG_TIME, LOG_RESOURCE, LOG_PID, LOG_STATUS, LOG_ACTION) VALUES ('0', '2015-07-29', '22:26:06.315', 'fail2ban.filter', '823', 'INFO', 'Set jail log file encoding to US-ASCII')
-Error: could not insert line in the database.
-Query:INSERT INTO LOGS (LOG_MAC, LOG_DATE,LOG_TIME, LOG_RESOURCE, LOG_PID, LOG_STATUS, LOG_ACTION) VALUES ('0', '2015-07-29', '22:26:06.315', 'fail2ban.actions', '823', 'INFO', 'Set banTime = 60')
-Connection: jdbc:mysql://192.168.56.105:3306/F2B_LOGS_DB?user=blueguardian&password=123456
-Query:INSERT INTO LOGS (LOG_MAC, LOG_DATE,LOG_TIME, LOG_RESOURCE, LOG_PID, LOG_STATUS, LOG_ACTION) VALUES ('0', '2015-07-29', '22:26:06.316', 'fail2ban.filter', '823', 'INFO', 'Set findtime = 600')
-Connection: jdbc:mysql://192.168.56.105:3306/F2B_LOGS_DB?user=blueguardian&password=123456
-Query:INSERT INTO LOGS (LOG_MAC, LOG_DATE,LOG_TIME, LOG_RESOURCE, LOG_PID, LOG_STATUS, LOG_ACTION) VALUES ('0', '2015-07-29', '22:26:06.316', 'fail2ban.filter', '823', 'INFO', 'Set maxlines = 10')
-Connection: jdbc:mysql://192.168.56.105:3306/F2B_LOGS_DB?user=blueguardian&password=123456
-Query:INSERT INTO LOGS (LOG_MAC, LOG_DATE,LOG_TIME, LOG_RESOURCE, LOG_PID, LOG_STATUS, LOG_ACTION) VALUES ('0', '2015-07-29', '22:26:06.371', 'fail2ban.server', '823', 'INFO', 'Jail sshd is not a JournalFilter instance')
-Connection: jdbc:mysql://192.168.56.105:3306/F2B_LOGS_DB?user=blueguardian&password=123456
-Query:INSERT INTO LOGS (LOG_MAC, LOG_DATE,LOG_TIME, LOG_RESOURCE, LOG_PID, LOG_STATUS, LOG_ACTION) VALUES ('0', '2015-07-29', '22:26:06.375', 'fail2ban.jail', '823', 'INFO', 'Creating new jail apache-auth')
-Connection: jdbc:mysql://192.168.56.105:3306/F2B_LOGS_DB?user=blueguardian&password=123456
-Query:INSERT INTO LOGS (LOG_MAC, LOG_DATE,LOG_TIME, LOG_RESOURCE, LOG_PID, LOG_STATUS, LOG_ACTION) VALUES ('0', '2015-07-29', '22:26:06.376', 'fail2ban.jail', '823', 'INFO', 'Jail apache-auth uses poller')
-Connection: jdbc:mysql://192.168.56.105:3306/F2B_LOGS_DB?user=blueguardian&password=123456
-Query:INSERT INTO LOGS (LOG_MAC, LOG_DATE,LOG_TIME, LOG_RESOURCE, LOG_PID, LOG_STATUS, LOG_ACTION) VALUES ('0', '2015-07-29', '22:26:06.377', 'fail2ban.filter', '823', 'INFO', 'Set jail log file encoding to US-ASCII')
-Error: could not insert line in the database.
-Query:INSERT INTO LOGS (LOG_MAC, LOG_DATE,LOG_TIME, LOG_RESOURCE, LOG_PID, LOG_STATUS, LOG_ACTION) VALUES ('0', '2015-07-29', '22:26:06.377', 'fail2ban.jail', '823', 'INFO', 'Initiated polling backend')
-Error: could not insert line in the database.
-Query:INSERT INTO LOGS (LOG_MAC, LOG_DATE,LOG_TIME, LOG_RESOURCE, LOG_PID, LOG_STATUS, LOG_ACTION) VALUES ('0', '2015-07-29', '22:26:06.382', 'fail2ban.filter', '823', 'INFO', 'Added logfile = /var/log/httpd-error.log')
-Connection: jdbc:mysql://192.168.56.105:3306/F2B_LOGS_DB?user=blueguardian&password=123456
-Query:INSERT INTO LOGS (LOG_MAC, LOG_DATE,LOG_TIME, LOG_RESOURCE, LOG_PID, LOG_STATUS, LOG_ACTION) VALUES ('0', '2015-07-29', '22:26:06.383', 'fail2ban.filter', '823', 'INFO', 'Set maxRetry = 3')
-Connection: jdbc:mysql://192.168.56.105:3306/F2B_LOGS_DB?user=blueguardian&password=123456
-Query:INSERT INTO LOGS (LOG_MAC, LOG_DATE,LOG_TIME, LOG_RESOURCE, LOG_PID, LOG_STATUS, LOG_ACTION) VALUES ('0', '2015-07-29', '22:26:06.384', 'fail2ban.filter', '823', 'INFO', 'Set jail log file encoding to US-ASCII')
-Error: could not insert line in the database.
-Query:INSERT INTO LOGS (LOG_MAC, LOG_DATE,LOG_TIME, LOG_RESOURCE, LOG_PID, LOG_STATUS, LOG_ACTION) VALUES ('0', '2015-07-29', '22:26:06.384', 'fail2ban.actions', '823', 'INFO', 'Set banTime = 60')
-Error: could not insert line in the database.
-Query:INSERT INTO LOGS (LOG_MAC, LOG_DATE,LOG_TIME, LOG_RESOURCE, LOG_PID, LOG_STATUS, LOG_ACTION) VALUES ('0', '2015-07-29', '22:26:06.385', 'fail2ban.filter', '823', 'INFO', 'Set findtime = 600')
-Error: could not insert line in the database.
-Query:INSERT INTO LOGS (LOG_MAC, LOG_DATE,LOG_TIME, LOG_RESOURCE, LOG_PID, LOG_STATUS, LOG_ACTION) VALUES ('0', '2015-07-29', '22:26:06.429', 'fail2ban.jail', '823', 'INFO', 'Jail sshd started')
-Connection: jdbc:mysql://192.168.56.105:3306/F2B_LOGS_DB?user=blueguardian&password=123456
-Query:INSERT INTO LOGS (LOG_MAC, LOG_DATE,LOG_TIME, LOG_RESOURCE, LOG_PID, LOG_STATUS, LOG_ACTION) VALUES ('0', '2015-07-29', '22:26:06.450', 'fail2ban.jail', '823', 'INFO', 'Jail apache-auth started')
-Wirte in ./var_file.info 136
+Number of lines: 51
+Count lines: 51
+Getting the last line from database
+Connection: jdbc:mysql://192.168.56.105:3306/F2B_LOGS_DB?user=blueguardian&password=123456
+Query for get last line: select * from LOGS WHERE LOG_MAC='08-00-27-E2-D4-58' AND LOG_DATETIME = (SELECT MAX(LOG_DATETIME) FROM LOGS WHERE LOG_MAC='08-00-27-E2-D4-58')
+2015-07-09 14:23:02.739
+Db Last line date: 2015-07-09 14:23:02.739
+File last line date: 2015-07-09 14:23:02.739
+Getting the last line from database
+Connection: jdbc:mysql://192.168.56.105:3306/F2B_LOGS_DB?user=blueguardian&password=123456
+Query for get last line: select * from LOGS WHERE LOG_MAC='08-00-27-E2-D4-58' AND LOG_DATETIME = (SELECT MAX(LOG_DATETIME) FROM LOGS WHERE LOG_MAC='08-00-27-E2-D4-58')
+2015-07-09 14:23:02.739
+Compare lines: 0
 Connection: jdbc:mysql://192.168.56.105:3306/F2B_LOGS_DB?user=blueguardian&password=123456
 Database not empty
 Getting the last line from database
 Connection: jdbc:mysql://192.168.56.105:3306/F2B_LOGS_DB?user=blueguardian&password=123456
-Query for get last line: select * from LOGS WHERE LOG_MAC=826 AND LOG_DATE = (SELECT MAX(LOG_DATE) FROM LOGS WHERE LOG_MAC=826 AND LOG_TIME= (SELECT MAX(LOG_TIME) FROM LOGS WHERE LOG_MAC=826))
+Query for get last line: select * from LOGS WHERE LOG_MAC='08-00-27-E2-D4-58' AND LOG_DATETIME = (SELECT MAX(LOG_DATETIME) FROM LOGS WHERE LOG_MAC='08-00-27-E2-D4-58')
+2015-07-09 14:23:02.739
+Number of lines: 51
+Count lines: 51
+Getting the last line from database
+Connection: jdbc:mysql://192.168.56.105:3306/F2B_LOGS_DB?user=blueguardian&password=123456
+Query for get last line: select * from LOGS WHERE LOG_MAC='08-00-27-E2-D4-58' AND LOG_DATETIME = (SELECT MAX(LOG_DATETIME) FROM LOGS WHERE LOG_MAC='08-00-27-E2-D4-58')
+2015-07-09 14:23:02.739
+Db Last line date: 2015-07-09 14:23:02.739
+File last line date: 2015-07-09 14:23:02.739
+Getting the last line from database
+Connection: jdbc:mysql://192.168.56.105:3306/F2B_LOGS_DB?user=blueguardian&password=123456
+Query for get last line: select * from LOGS WHERE LOG_MAC='08-00-27-E2-D4-58' AND LOG_DATETIME = (SELECT MAX(LOG_DATETIME) FROM LOGS WHERE LOG_MAC='08-00-27-E2-D4-58')
+2015-07-09 14:23:02.739
+Compare lines: 0
+Connection: jdbc:mysql://192.168.56.105:3306/F2B_LOGS_DB?user=blueguardian&password=123456
+Database not empty
+Getting the last line from database
+Connection: jdbc:mysql://192.168.56.105:3306/F2B_LOGS_DB?user=blueguardian&password=123456
+Query for get last line: select * from LOGS WHERE LOG_MAC='08-00-27-E2-D4-58' AND LOG_DATETIME = (SELECT MAX(LOG_DATETIME) FROM LOGS WHERE LOG_MAC='08-00-27-E2-D4-58')
+2015-07-09 14:23:02.739
+Number of lines: 51
+Count lines: 51
+Getting the last line from database
+Connection: jdbc:mysql://192.168.56.105:3306/F2B_LOGS_DB?user=blueguardian&password=123456
