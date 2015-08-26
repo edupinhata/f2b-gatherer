@@ -322,7 +322,8 @@ public class FileLog{
 			//start to read fail2ban.log
 			while((line = br.readLine()) != null){
 				if(isLogLine(line)){
-					bw.write(line);	
+					bw.write(line);
+					bw.newLine();	
 				}
 			}
 
