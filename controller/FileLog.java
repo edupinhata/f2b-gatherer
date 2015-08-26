@@ -48,8 +48,9 @@ public class FileLog{
 	}
 	
 	//constructor that change the path
-	public FileLog(String mac, String GATHERER_LOG, String VAR_FILE){
+	public FileLog(String mac, String F2B_LOG,  String GATHERER_LOG, String VAR_FILE){
 		this.mac = mac;
+		this.F2B_LOG = F2B_LOG;
 		this.GATHERER_LOG = GATHERER_LOG;
 		this.VAR_FILE = VAR_FILE;
 	}

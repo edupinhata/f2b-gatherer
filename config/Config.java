@@ -19,6 +19,7 @@ public class Config{
 	private String DB_USER = "root";
 	private String DB_PASS = "root";
 	private String F2B_LOG = "/var/log/fail2ban.log";
+	private String GATHERER_LOG = "./gatherer.txt";
 	private String VAR_FILE = "./var_file.info";
 	private String CONFIG_FILE = "./paths.conf";
 
@@ -46,6 +47,9 @@ public class Config{
 
 	public String getF2bLog(){
 		return F2B_LOG;}
+
+	public String getGatherer(){
+		return GATHERER_LOG;}
 
 	public String getVarFile(){
 		return VAR_FILE;}

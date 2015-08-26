@@ -68,7 +68,7 @@ public class Log{
 		//comunication with log and database
 		dl = new DbLog(this.mac, conf.getIp(), conf.getPort(), conf.getUser()
 				, conf.getPassword());
-		fl = new FileLog(this.mac, conf.getF2bLog(), conf.getVarFile());
+		fl = new FileLog(this.mac, conf.getF2bLog(),conf.getGatherer(),  conf.getVarFile());
 	}
 
 	//METHODS
