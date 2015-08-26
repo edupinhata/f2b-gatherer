@@ -136,7 +136,7 @@ public class Line{
 	
 		this.dateTime = LocalDateTime.of(dateTime.getYear(), dateTime.getMonth(),
 					dateTime.getDayOfMonth(), time[0], time[1],
-					time[2], time[3]);
+					time[2], time[3]*1000000);
 	}
 	
 	//Resource

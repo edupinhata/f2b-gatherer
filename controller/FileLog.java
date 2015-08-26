@@ -25,6 +25,7 @@ public class FileLog{
 	======================= */
 	//PATHS
 	private String F2B_LOG = "/var/log/fail2ban.log";
+	private String GATHERER_LOG = "../gatherer.txt"; 
         private String VAR_FILE = "../var_file.txt";
 
 	//
@@ -47,9 +48,9 @@ public class FileLog{
 	}
 	
 	//constructor that change the path
-	public FileLog(String mac, String F2B_LOG, String VAR_FILE){
+	public FileLog(String mac, String GATHERER_LOG, String VAR_FILE){
 		this.mac = mac;
-		this.F2B_LOG = F2B_LOG;
+		this.GATHERER_LOG = GATHERER_LOG;
 		this.VAR_FILE = VAR_FILE;
 	}
 
@@ -62,8 +63,12 @@ public class FileLog{
 	 * lineNumber information.
 	 */
 	public void update(){
+		//before update, copy all the fail2ban.log to 
+		//gatherer log
+		updateLogFile();	
+	
 		try{
-			fr = new FileReader(F2B_LOG);
+			fr = new FileReader(GATHERER_LOG);
 			br = new BufferedReader(fr);
 			int counter = 0; //will count the number of lines
 			String line; //will save the lines that are being read.
@@ -137,7 +142,7 @@ public class FileLog{
 	 */
 	public Line getLine(int lineNumber){
 		try{
-			fr = new FileReader(F2B_LOG);
+			fr = new FileReader(GATHERER_LOG);
 			br = new BufferedReader(fr);
 
 			for(int i=1; i<lineNumber; i++)
@@ -220,7 +225,7 @@ public class FileLog{
 		String line;
 
 		try{
-			fr = new FileReader(F2B_LOG);
+			fr = new FileReader(GATHERER_LOG);
 			br = new BufferedReader(fr);
 
 			while((line = br.readLine()) != null)
@@ -251,7 +256,7 @@ public class FileLog{
 		String line;
 
 		try{
-			fr = new FileReader(F2B_LOG);
+			fr = new FileReader(GATHERER_LOG);
 			br = new BufferedReader(fr);
 
 			for(int i=0; i<lineNum; i++)
@@ -272,5 +277,61 @@ public class FileLog{
 		}*/
 		return null;
 	}
+
+	/*
+	 * isLogLine
+	 * Function that return a boolean informing 
+	 * if a String is a log line or not.
+	 */
+	public boolean isLogLine(String line){
+		return line.matches("[0-9]+-[0-9]+-[0-9]+\\s+[0-9]+:[0-9]+:[0-9]+,[0-9]+\\s+fail2ban.(jail|action|filter|server|database)\\s+\\[\\d+\\]:.*");
+	}
+
+
+
+	/*
+	 * updateLogFile
+	 * Once that the fail2ban.log can have some trash,
+	 * one function using regular expression will
+	 * identify all the lines that are in the correct
+	 * form and separate into a new log.
+	 *
+	 * Will read all the fail2ban.log and copy the 
+	 * valid lines to a new log.
+	 *
+	 * Efficience problem: this function is not good
+	 * because it must to rewrite all the lines every
+	 * time that it runs.
+	 * To change this, it's needed to change the log 
+	 * control.
+	 * One option is to verify if the file was modified
+	 * saving the last modification date.
+	 */
+	public void updateLogFile(){
+		
+		String line;
+		
+		try{
+			fr = new FileReader(F2B_LOG);
+			br = new BufferedReader(fr);
+
+			fw = new FileWriter(GATHERER_LOG, false);
+			bw = new BufferedWriter(fw);
+			
+			//start to read fail2ban.log
+			while((line = br.readLine()) != null){
+				if(isLogLine(line)){
+					bw.write(line);	
+				}
+			}
+
+			bw.close();
+
+		}catch(Exception e){
+			e.printStackTrace();
+			System.out.println("Fail in update the gatherer log.");
+		}
+	}	
+
 
 }

@@ -66,12 +66,12 @@ public class Log{
 
 		//create the objects that will control the 
 		//comunication with log and database
-		dl = new DbLog(mac, conf.getIp(), conf.getPort(), conf.getUser()
+		dl = new DbLog(this.mac, conf.getIp(), conf.getPort(), conf.getUser()
 				, conf.getPassword());
-		fl = new FileLog(mac, conf.getF2bLog(), conf.getVarFile());
+		fl = new FileLog(this.mac, conf.getF2bLog(), conf.getVarFile());
 	}
 
-	//methods
+	//METHODS
 
 	/*
 	* isChanged
